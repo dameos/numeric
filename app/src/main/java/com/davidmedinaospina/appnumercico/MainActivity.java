@@ -36,14 +36,19 @@ public class MainActivity extends AppCompatActivity
                 String num = mEdit2.getText().toString();
                 if (!num.isEmpty()) a = Double.parseDouble(num);
                 String exp = mEdit.getText().toString();
-                Expression e = new ExpressionBuilder(exp)
-                        .variables("x")
-                        .build()
-                        .setVariable("x",a);
-                double res = e.evaluate();
-                String b = Double.toString(res);
-                Snackbar.make(view, b , Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                try {
+                    Expression e = new ExpressionBuilder(exp)
+                            .variables("x")
+                            .build()
+                            .setVariable("x", a);
+                    double res = e.evaluate();
+                    String b = Double.toString(res);
+                    Snackbar.make(view, b, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } catch (RuntimeException e) {
+                    Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
 
