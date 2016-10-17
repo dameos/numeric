@@ -12,6 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,12 +26,23 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        final EditText mEdit   = (EditText)findViewById(R.id.editText);
+        final EditText mEdit2 = (EditText)findViewById(R.id.editText2);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Double a = 0d;
+                String num = mEdit2.getText().toString();
+                if (!num.isEmpty()) a = Double.parseDouble(num);
+                String exp = mEdit.getText().toString();
+                Expression e = new ExpressionBuilder(exp)
+                        .variables("x")
+                        .build()
+                        .setVariable("x",a);
+                double res = e.evaluate();
+                String b = Double.toString(res);
+                Snackbar.make(view, b , Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
