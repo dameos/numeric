@@ -1,5 +1,6 @@
 package com.davidmedinaospina.appnumercico;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    String pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity
                 String num = mEdit2.getText().toString();
                 if (!num.isEmpty()) a = Double.parseDouble(num);
                 String exp = mEdit.getText().toString();
+                pass = exp;
                 try {
                     Expression e = new ExpressionBuilder(exp)
                             .variables("x")
@@ -98,8 +100,46 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Bundle bun = new Bundle();
+        bun.putString("expr",pass);
         int id = item.getItemId();
-
+        switch (id){
+            case R.id.busqInc:
+                Intent a = new Intent(this,BusqInc.class);
+                a.putExtras(bun);
+                startActivity(a);
+                break;
+            case R.id.bisec:
+                Intent b = new Intent(this,Bisecc.class);
+                b.putExtras(bun);
+                startActivity(b);
+                break;
+            case R.id.regFal:
+                Intent c = new Intent(this, ReglaFal.class);
+                c.putExtras(bun);
+                startActivity(c);
+                break;
+            case R.id.puntFijo:
+                Intent d = new Intent(this,PuntoFijo.class);
+                d.putExtras(bun);
+                startActivity(d);
+                break;
+            case R.id.newT:
+                Intent e = new Intent(this,Newto.class);
+                e.putExtras(bun);
+                startActivity(e);
+                break;
+            case R.id.seca:
+                Intent f = new Intent(this,Secant.class);
+                f.putExtras(bun);
+                startActivity(f);
+                break;
+            case R.id.raicMul:
+                Intent g = new Intent(this,RaicesMult.class);
+                g.putExtras(bun);
+                startActivity(g);
+                break;
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

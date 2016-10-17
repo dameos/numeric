@@ -7,20 +7,32 @@
         <menu>
             <item
                 android:icon="@drawable/ic_menu_share"
-                android:title="Busqueda Incremental" />
+                android:title="Busqueda Incremental"
+                android:id="@+id/busqInc"/>
             <item
                 android:icon="@drawable/ic_menu_share"
-                android:title="Bisección" />
-            <item android:title="Regla Falsa"
-                android:icon="@drawable/ic_menu_share" />
-            <item android:title="Punto FIjo"
-                android:icon="@drawable/ic_menu_share" />
-            <item android:title="Newton"
-                android:icon="@drawable/ic_menu_share" />
-            <item android:title="Secante"
-                android:icon="@drawable/ic_menu_share" />
-            <item android:title="Raices Múltiples"
-                android:icon="@drawable/ic_menu_share" />
+                android:title="Bisección"
+                android:id="@+id/bisec"/>
+            <item
+                android:title="Regla Falsa"
+                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/regFal"/>
+            <item
+                android:title="Punto FIjo"
+                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/puntFijo"/>
+            <item
+                android:title="Newton"
+                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/newT"/>
+            <item
+                android:title="Secante"
+                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/seca"/>
+            <item
+                android:title="Raices Múltiples"
+                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/raicMul"/>
         </menu>
     </item>
 

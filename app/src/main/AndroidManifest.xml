@@ -18,6 +18,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BusqInc"
+            android:label="@string/title_activity_busq_inc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Bisecc"
+            android:label="@string/title_activity_bisecc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReglaFal"
+            android:label="@string/title_activity_regla_fal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PuntoFijo"
+            android:label="@string/title_activity_punto_fijo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Newto"
+            android:label="@string/title_activity_newto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Secant"
+            android:label="@string/title_activity_secant"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RaicesMult"
+            android:label="@string/title_activity_raices_mult"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
