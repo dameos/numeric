@@ -139,6 +139,11 @@ public class MainActivity extends AppCompatActivity
                 g.putExtras(bun);
                 startActivity(g);
                 break;
+            case R.id.grafica:
+                Intent h = new Intent(this,Grafica.class);
+                h.putExtras(bun);
+                startActivity(h);
+                break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

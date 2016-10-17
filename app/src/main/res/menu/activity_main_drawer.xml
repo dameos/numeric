@@ -7,6 +7,10 @@
         <menu>
             <item
                 android:icon="@drawable/ic_menu_share"
+                android:title="Grafica"
+                android:id="@+id/grafica"/>
+            <item
+                android:icon="@drawable/ic_menu_share"
                 android:title="Busqueda Incremental"
                 android:id="@+id/busqInc"/>
             <item

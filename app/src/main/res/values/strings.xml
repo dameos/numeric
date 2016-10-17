@@ -3,8 +3,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="title_activity_grafica">Grafica</string>
     <string name="title_activity_busq_inc">BusqInc</string>
     <string name="title_activity_bisecc">Bisecc</string>
     <string name="title_activity_regla_fal">ReglaFal</string>
@@ -12,4 +12,7 @@
     <string name="title_activity_newto">Newto</string>
     <string name="title_activity_secant">Secant</string>
     <string name="title_activity_raices_mult">RaicesMult</string>
+
+
+
 </resources>

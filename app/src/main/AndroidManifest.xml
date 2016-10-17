@@ -19,6 +19,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Grafica"
+            android:label="@string/title_activity_grafica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".BusqInc"
             android:label="@string/title_activity_busq_inc"
             android:theme="@style/AppTheme.NoActionBar" />
