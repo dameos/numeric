@@ -20,6 +20,9 @@ import com.androidplot.xy.XYGraphWidget;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYSeries;
 
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -100,10 +103,18 @@ public class Grafica extends AppCompatActivity {
         plot.getGraph().getRangeGridLinePaint().setPathEffect(dashFx);
 
         // add a new series' to the xyplot:
-        plot.addSeries(generateSeries(-6, 6, 100), series1Format);
+        try {
+            plot.addSeries(generateSeries(-6, 6, 100), series1Format);
+        }
+        catch (RuntimeException err)
+        {
+            System.out.println(err.getMessage());
+        }
 
     }
     protected XYSeries generateSeries(double minX, double maxX, double resolution) {
+        Bundle bundle = getIntent().getExtras();
+        final String exp = bundle.getString("expr");
         final double range = maxX - minX;
         final double step = range / resolution;
         List<Number> xVals = new ArrayList<>();
@@ -111,18 +122,17 @@ public class Grafica extends AppCompatActivity {
 
         double x = minX;
         while (x <= maxX) {
+            Expression e = new ExpressionBuilder(exp)
+                    .variables("x")
+                    .build()
+                    .setVariable("x", x);
             xVals.add(x);
-            yVals.add(fx(x));
+            yVals.add(e.evaluate());
             x +=step;
         }
 
         return new SimpleXYSeries(xVals, yVals, "Funcion");
     }
-
-    protected double fx(double x) {
-        return Math.sin(x);
-    }
-
 
 }
 
