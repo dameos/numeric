@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.androidplot.util.PixelUtils;
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.StepMode;
@@ -92,9 +93,9 @@ public class Grafica extends AppCompatActivity {
 
         plot.setDomainStep(StepMode.INCREMENT_BY_VAL, 1);
         plot.setRangeStep(StepMode.INCREMENT_BY_VAL, 1);
+        plot.setDomainBoundaries(ranx1,ranx2,BoundaryMode.FIXED);
+        plot.setRangeBoundaries(rany1,rany2,BoundaryMode.FIXED);
 
-        plot.centerOnDomainOrigin(0);
-        plot.centerOnRangeOrigin(0);
 
         // create formatters to use for drawing a series using LineAndPointRenderer
         // and configure them from xml:
@@ -121,7 +122,7 @@ public class Grafica extends AppCompatActivity {
 
         // add a new series' to the xyplot:
         try {
-            plot.addSeries(generateSeries(-3, 6, 100), series1Format);
+            plot.addSeries(generateSeries(ranx1, ranx2, 100), series1Format);
         }
         catch (RuntimeException err)
         {
