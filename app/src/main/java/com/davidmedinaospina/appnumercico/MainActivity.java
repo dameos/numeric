@@ -21,6 +21,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String pass;
+    String rx1, rx2, ry1, ry2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         final EditText mEdit   = (EditText)findViewById(R.id.editText);
         final EditText mEdit2 = (EditText)findViewById(R.id.editText2);
+        final EditText rangoX1 = (EditText)findViewById(R.id.editText4);
+        final EditText rangoX2 = (EditText)findViewById(R.id.editText8);
+        final EditText rangoY1 = (EditText)findViewById(R.id.editText7);
+        final EditText rangoY2 = (EditText)findViewById(R.id.editText9);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +42,10 @@ public class MainActivity extends AppCompatActivity
                 String num = mEdit2.getText().toString();
                 if (!num.isEmpty()) a = Double.parseDouble(num);
                 String exp = mEdit.getText().toString();
+                rx1 = rangoX1.getText().toString();
+                rx2 = rangoX2.getText().toString();
+                ry1 = rangoY1.getText().toString();
+                ry2 = rangoY2.getText().toString();
                 pass = exp;
                 try {
                     Expression e = new ExpressionBuilder(exp)
@@ -141,6 +150,10 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.grafica:
                 Intent h = new Intent(this,Grafica.class);
+                bun.putString("ranX1",rx1);
+                bun.putString("ranX2",rx2);
+                bun.putString("ranY1",ry1);
+                bun.putString("ranY2",ry2);
                 h.putExtras(bun);
                 startActivity(h);
                 break;

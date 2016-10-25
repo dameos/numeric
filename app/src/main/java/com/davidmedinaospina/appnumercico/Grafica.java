@@ -67,6 +67,23 @@ public class Grafica extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        int ranx1 = -6;
+        int ranx2 = 6;
+        int rany1 = -6;
+        int rany2 = 6;
+
+        Bundle bundle = getIntent().getExtras();
+        final String x1 = bundle.getString("ranX1");
+        final String x2 = bundle.getString("ranX2");
+        final String y1 = bundle.getString("ranY1");
+        final String y2 = bundle.getString("ranY2");
+        if(!x1.isEmpty() && !x2.isEmpty() && !y1.isEmpty() && !y2.isEmpty()){
+            ranx1 = Integer.parseInt(x1);
+            ranx2 = Integer.parseInt(x2);
+            rany1 = Integer.parseInt(y1);
+            rany2 = Integer.parseInt(y2);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafica);
 
@@ -104,7 +121,7 @@ public class Grafica extends AppCompatActivity {
 
         // add a new series' to the xyplot:
         try {
-            plot.addSeries(generateSeries(-6, 6, 100), series1Format);
+            plot.addSeries(generateSeries(-3, 6, 100), series1Format);
         }
         catch (RuntimeException err)
         {
