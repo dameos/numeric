@@ -13,12 +13,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.androidplot.util.PixelUtils;
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.StepMode;
 import com.androidplot.xy.XYGraphWidget;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYSeries;
+
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -64,6 +68,23 @@ public class Grafica extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        int ranx1 = -6;
+        int ranx2 = 6;
+        int rany1 = -6;
+        int rany2 = 6;
+
+        Bundle bundle = getIntent().getExtras();
+        final String x1 = bundle.getString("ranX1");
+        final String x2 = bundle.getString("ranX2");
+        final String y1 = bundle.getString("ranY1");
+        final String y2 = bundle.getString("ranY2");
+        if(!x1.isEmpty() && !x2.isEmpty() && !y1.isEmpty() && !y2.isEmpty()){
+            ranx1 = Integer.parseInt(x1);
+            ranx2 = Integer.parseInt(x2);
+            rany1 = Integer.parseInt(y1);
+            rany2 = Integer.parseInt(y2);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafica);
 
@@ -72,9 +93,9 @@ public class Grafica extends AppCompatActivity {
 
         plot.setDomainStep(StepMode.INCREMENT_BY_VAL, 1);
         plot.setRangeStep(StepMode.INCREMENT_BY_VAL, 1);
+        plot.setDomainBoundaries(ranx1,ranx2,BoundaryMode.FIXED);
+        plot.setRangeBoundaries(rany1,rany2,BoundaryMode.FIXED);
 
-        plot.centerOnDomainOrigin(0);
-        plot.centerOnRangeOrigin(0);
 
         // create formatters to use for drawing a series using LineAndPointRenderer
         // and configure them from xml:
@@ -100,10 +121,18 @@ public class Grafica extends AppCompatActivity {
         plot.getGraph().getRangeGridLinePaint().setPathEffect(dashFx);
 
         // add a new series' to the xyplot:
-        plot.addSeries(generateSeries(-6, 6, 100), series1Format);
+        try {
+            plot.addSeries(generateSeries(ranx1, ranx2, 100), series1Format);
+        }
+        catch (RuntimeException err)
+        {
+            System.out.println(err.getMessage());
+        }
 
     }
     protected XYSeries generateSeries(double minX, double maxX, double resolution) {
+        Bundle bundle = getIntent().getExtras();
+        final String exp = bundle.getString("expr");
         final double range = maxX - minX;
         final double step = range / resolution;
         List<Number> xVals = new ArrayList<>();
@@ -111,18 +140,17 @@ public class Grafica extends AppCompatActivity {
 
         double x = minX;
         while (x <= maxX) {
+            Expression e = new ExpressionBuilder(exp)
+                    .variables("x")
+                    .build()
+                    .setVariable("x", x);
             xVals.add(x);
-            yVals.add(fx(x));
+            yVals.add(e.evaluate());
             x +=step;
         }
 
         return new SimpleXYSeries(xVals, yVals, "Funcion");
     }
-
-    protected double fx(double x) {
-        return Math.sin(x);
-    }
-
 
 }
 
