@@ -13,15 +13,108 @@
     tools:context="com.davidmedinaospina.appnumercico.Bisecc"
     tools:showIn="@layout/activity_bisecc">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="132dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="200dp"
-        android:id="@+id/textView4" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xitext"
+                        android:text="@string/xiview"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/xinumber"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/xitext" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="200px"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xstext"
+                        android:text="Xs"
+                        android:layout_toLeftOf="@+id/xsnumber"
+                        android:layout_above="@+id/tolnumber"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xsnumber"
+                        android:layout_toRightOf="@+id/xstext"
+                        android:layout_above="@+id/tolnumber"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="x final" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="200px"
+                        android:layout_height="match_parent"
+                        android:id="@+id/toltext"
+                        android:text="Tolerancia"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tolnumber"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="val tolerancia" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="200px"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertext"
+                        android:text="Iteraciones"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumber"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="# iteraciones" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bisecc_table"
+                    android:layout_above="@+id/bisecc_result">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bisecc_result"
+                android:layout_margin="100px"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 </RelativeLayout>

@@ -5,14 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_grafica">Grafica</string>
-    <string name="title_activity_busq_inc">BusqInc</string>
-    <string name="title_activity_bisecc">Bisecc</string>
-    <string name="title_activity_regla_fal">ReglaFal</string>
-    <string name="title_activity_punto_fijo">PuntoFijo</string>
-    <string name="title_activity_newto">Newto</string>
-    <string name="title_activity_secant">Secant</string>
-    <string name="title_activity_raices_mult">RaicesMult</string>
-
-
+    <string name="title_activity_busq_inc">Busqueda Incremental</string>
+    <string name="title_activity_bisecc">Bisección</string>
+    <string name="title_activity_regla_fal">Regla Falsa</string>
+    <string name="title_activity_punto_fijo">Punto Fijo</string>
+    <string name="title_activity_newto">Newton</string>
+    <string name="title_activity_secant">Secante</string>
+    <string name="title_activity_raices_mult">Raices Múltiples</string>
+    <string name="xiview">Xi</string>
+    <string name="xitext">x inicial</string>
 
 </resources>
