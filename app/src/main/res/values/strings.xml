@@ -14,5 +14,8 @@
     <string name="title_activity_raices_mult">Raices Múltiples</string>
     <string name="xiview">Xi</string>
     <string name="xitext">x inicial</string>
+    <string name="title_activity_matriz">Matriz</string>
+    <string name="title_activity_interpolacion">Interpolacion</string>
+    <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
 
 </resources>

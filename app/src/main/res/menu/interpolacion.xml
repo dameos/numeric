@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="Sistemas de Ecuaciones"
-        android:id="@+id/sistemasEcuaciones" />
     <item
         android:id="@+id/solEcuaciones"
         android:orderInCategory="100"
-        android:title="Ecuaciones una Var" />
+        android:title="Ecuaciones una Var"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/sistemasEcuaciones"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Sistemas de Ecuaciones" />
     <item android:title="Interpolacion"
         android:id="@+id/interpolation" />
 </menu>

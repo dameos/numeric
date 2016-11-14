@@ -49,6 +49,21 @@
         <activity
             android:name=".RaicesMult"
             android:label="@string/title_activity_raices_mult"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Interpolacion"
+            android:label="@string/title_activity_interpolacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SistemasDeEcuaciones"
+            android:label="@string/title_activity_sistemas_de_ecuaciones"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

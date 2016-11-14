@@ -98,8 +98,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.solEcuaciones) {
             return true;
+        }
+
+        if(id == R.id.interpolation) {
+            Intent a = new Intent(this,Interpolacion.class);
+            startActivity(a);
+        }
+
+        if(id == R.id.solEcuaciones) {
+            Intent a = new Intent(this,SistemasDeEcuaciones.class);
         }
 
         return super.onOptionsItemSelected(item);
