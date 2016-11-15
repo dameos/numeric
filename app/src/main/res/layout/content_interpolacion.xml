@@ -13,4 +13,116 @@
     tools:context="com.davidmedinaospina.appnumercico.Interpolacion"
     tools:showIn="@layout/app_bar_interpolacion">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView17"
+        android:text="Coordenada Abscisa(x)"
+        android:layout_alignTop="@+id/editText10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_marginTop="28dp"
+        android:id="@+id/editText11"
+        android:layout_below="@+id/editText10"
+        android:layout_toRightOf="@+id/textView18"
+        android:layout_toEndOf="@+id/textView18" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView18"
+        android:text="Coordenada Ordenada(y)"
+        android:layout_alignTop="@+id/editText11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:text="Valor X a evaluar"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/editText11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText12"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/editText11"
+        android:layout_alignStart="@+id/editText11" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_marginTop="73dp"
+        android:id="@+id/editText10"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView18"
+        android:layout_toRightOf="@+id/textView18" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="17dp"
+        android:id="@+id/floatingActionButton2"
+        app:backgroundTint="?attr/actionMenuTextColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:layout_above="@+id/floatingActionButton2"
+        android:layout_alignRight="@+id/floatingActionButton2"
+        android:layout_alignEnd="@+id/floatingActionButton2"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/floatingActionButton3"
+        app:backgroundTint="?attr/actionMenuTextColor" />
+
+    <TextView
+        android:text="Agregar Punto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp"
+        android:id="@+id/textView19"
+        android:layout_alignBottom="@+id/floatingActionButton2"
+        android:layout_toLeftOf="@+id/floatingActionButton2"
+        android:layout_toStartOf="@+id/floatingActionButton2"
+        android:layout_marginBottom="11dp" />
+
+    <TextView
+        android:text="Eliminar Puntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_alignBottom="@+id/floatingActionButton3"
+        android:layout_alignLeft="@+id/textView19"
+        android:layout_alignStart="@+id/textView19"
+        android:layout_marginBottom="11dp" />
+
 </RelativeLayout>
