@@ -29,11 +29,12 @@ public class PuntoFijo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Bundle bundle = getIntent().getExtras();
-                createTable(bundle.getString("expr"));
+                /*TOCA HACERLA POR PARAMETRO PORQUE SOS DEMASIADO MARICA PARA PONER UNA VARIABLE GLOBAL*/
+                createTable(bundle.getString("expr"),bundle.getString("funcG"));
             }});
     }
 
-    protected void createTable(String exp) {
+    protected void createTable(String exp, String g) {
         final TextView pFijoResultView = (TextView)findViewById(R.id.pfijo_result);
 
         final EditText xiEdit = (EditText)findViewById(R.id.xinumberBisec);

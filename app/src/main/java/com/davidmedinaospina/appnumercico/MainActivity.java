@@ -20,7 +20,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    String pass;
+    String pass, funcionG;
     String rx1, rx2, ry1, ry2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity
         final EditText rangoX2 = (EditText)findViewById(R.id.editText8);
         final EditText rangoY1 = (EditText)findViewById(R.id.editText7);
         final EditText rangoY2 = (EditText)findViewById(R.id.editText9);
+        final EditText funG    = (EditText)findViewById(R.id.editText3); //EditText DONDE ESTA LA PUTA G()
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +43,13 @@ public class MainActivity extends AppCompatActivity
                 String num = mEdit2.getText().toString();
                 if (!num.isEmpty()) a = Double.parseDouble(num);
                 String exp = mEdit.getText().toString();
+                String fun = funG.getText().toString();
                 rx1 = rangoX1.getText().toString();
                 rx2 = rangoX2.getText().toString();
                 ry1 = rangoY1.getText().toString();
                 ry2 = rangoY2.getText().toString();
                 pass = exp;
+                funcionG= fun; //PONGO LA GLOBAL CON LA PUTA G()
                 try {
                     Expression e = new ExpressionBuilder(exp)
                             .variables("x")
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.puntFijo:
                 Intent d = new Intent(this,PuntoFijo.class);
+                bun.putString("funcG",funcionG);    //METO LA HPTA GLOBAL EN EL BUNDLE
                 d.putExtras(bun);
                 startActivity(d);
                 break;
