@@ -12,10 +12,39 @@
     <string name="title_activity_newto">Newton</string>
     <string name="title_activity_secant">Secante</string>
     <string name="title_activity_raices_mult">Raices Múltiples</string>
-    <string name="xiview">Xi</string>
-    <string name="xitext">x inicial</string>
     <string name="title_activity_matriz">Matriz</string>
     <string name="title_activity_interpolacion">Interpolacion</string>
     <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
 
+    <string name="xiviewBis">Xi</string>
+    <string name="xitextBis">x inicial</string>
+    <string name="xsviewBis">Xs</string>
+    <string name="xstextBis">x final</string>
+    <string name="tolviewBis">Tolerancia</string>
+    <string name="toltextBis">valor tolerancia</string>
+    <string name="iterviewBis">Iteraciones</string>
+    <string name="itertextBis"># iteraciones</string>
+
+    <string name="x0viewBusq">x0</string>
+    <string name="x0textBusq">x inicial</string>
+    <string name="delviewBusq">Delta</string>
+    <string name="deltextBusq">valor delta</string>
+    <string name="iterviewBusq">Iteraciones</string>
+    <string name="itertextBusq"># iteraciones</string>
+
+    <string name="xiviewReg">Xi</string>
+    <string name="xitextReg">x inicial</string>
+    <string name="xsviewReg">Xs</string>
+    <string name="xstextReg">x final</string>
+    <string name="tolviewReg">Tolerancia</string>
+    <string name="toltextReg">valor tolerancia</string>
+    <string name="iterviewReg">Iteraciones</string>
+    <string name="itertextReg"># iteraciones</string>
+
+    <string name="xnviewPfijo">x0</string>
+    <string name="xntextPfijo">x inicial</string>
+    <string name="tolviewPfijo">Delta</string>
+    <string name="toltextPfijo">valor delta</string>
+    <string name="iterviewPfijo">Iteraciones</string>
+    <string name="itertextPfijo"># iteraciones</string>
 </resources>

@@ -13,12 +13,87 @@
     tools:context="com.davidmedinaospina.appnumercico.BusqInc"
     tools:showIn="@layout/activity_busq_inc">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="127dp"
-        android:id="@+id/textView3" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/x0textBusq"
+                        android:text="@string/x0viewBusq"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/x0numberBusq"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/x0textBusq" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/deltextBusq"
+                        android:text="@string/delviewBusq"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/delnumberBusq"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/deltextBusq" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertextBusq"
+                        android:text="@string/iterviewBusq"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumberBusq"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/itertextBusq" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/busqInc_table">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/busqInc_result"
+                android:layout_margin="50sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </RelativeLayout>

@@ -24,25 +24,21 @@ public class Bisecc extends AppCompatActivity {
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        Bundle bundle = getIntent().getExtras();
-        final String exp = bundle.getString("expr");
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = getIntent().getExtras();
                 createTable(bundle.getString("expr"));
             }});
-
     }
 
     protected void createTable(String exp) {
         final TextView bissecResultView = (TextView)findViewById(R.id.bisecc_result);
 
-        final EditText xiEdit = (EditText)findViewById(R.id.xinumber);
-        final EditText xsEdit = (EditText)findViewById(R.id.xsnumber);
-        final EditText tolEdit = (EditText)findViewById(R.id.tolnumber);
-        final EditText iterEdit = (EditText)findViewById(R.id.iternumber);
+        final EditText xiEdit = (EditText)findViewById(R.id.xinumberBisec);
+        final EditText xsEdit = (EditText)findViewById(R.id.xsnumberBisec);
+        final EditText tolEdit = (EditText)findViewById(R.id.tolnumberBisec);
+        final EditText iterEdit = (EditText)findViewById(R.id.iternumberBisec);
 
         Double xi = Double.parseDouble(xiEdit.getText().toString());
         Double xs = Double.parseDouble(xsEdit.getText().toString());
@@ -147,9 +143,6 @@ public class Bisecc extends AppCompatActivity {
                         err = Math.abs(xm - erra);
                         erra = xm;
                         cnt++;
-                        System.out.println("yi" + yi);
-                        System.out.println("ys" + ys);
-                        System.out.println("ym" + ym);
                     }
                     if (ym == 0) {
                         bissecResultView.setText("La ecuación tiene solución en xm = " + xm);
@@ -175,7 +168,7 @@ public class Bisecc extends AppCompatActivity {
                 return;
             }
             TextView res = new TextView(this);
-            res.setText("no sé qué poner aquí");
+            res.setText("No se ha ingresado un intervalo válido.");
             table.addView(res);
         } catch (RuntimeException e) {
             bissecResultView.setText(e.getMessage());

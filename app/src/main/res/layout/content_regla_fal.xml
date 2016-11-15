@@ -13,12 +13,102 @@
     tools:context="com.davidmedinaospina.appnumercico.ReglaFal"
     tools:showIn="@layout/activity_regla_fal">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:id="@+id/textView9" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xitextReg"
+                        android:text="@string/xiviewReg"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/xinumberReg"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/xitextReg" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xstextReg"
+                        android:text="@string/xsviewReg"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xsnumberReg"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/xsviewReg" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/toltextReg"
+                        android:text="@string/tolviewReg"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tolnumberReg"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/toltextReg" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertextReg"
+                        android:text="@string/iterviewReg"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumberReg"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/itertextReg" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reg_fal_table">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reg_fal_result"
+                android:layout_margin="50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </RelativeLayout>

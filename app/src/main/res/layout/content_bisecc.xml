@@ -30,69 +30,65 @@
                     <TextView
                         android:layout_width="150sp"
                         android:layout_height="match_parent"
-                        android:id="@+id/xitext"
-                        android:text="@string/xiview"/>
+                        android:id="@+id/xitextBisec"
+                        android:text="@string/xiviewBis"/>
                     <EditText
                         android:layout_height="match_parent"
-                        android:id="@+id/xinumber"
+                        android:id="@+id/xinumberBisec"
                         android:layout_width="match_parent"
                         android:inputType="numberSigned|numberDecimal"
-                        android:hint="@string/xitext" />
+                        android:hint="@string/xitextBis" />
                 </TableRow>
 
                 <TableRow>
                     <TextView
-                        android:layout_width="200px"
+                        android:layout_width="150sp"
                         android:layout_height="match_parent"
-                        android:id="@+id/xstext"
-                        android:text="Xs"
-                        android:layout_toLeftOf="@+id/xsnumber"
-                        android:layout_above="@+id/tolnumber"/>
+                        android:id="@+id/xstextBisec"
+                        android:text="@string/xsviewBis"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/xsnumber"
-                        android:layout_toRightOf="@+id/xstext"
-                        android:layout_above="@+id/tolnumber"
+                        android:id="@+id/xsnumberBisec"
                         android:inputType="numberSigned|numberDecimal"
-                        android:hint="x final" />
+                        android:hint="@string/xsviewBis" />
                 </TableRow>
 
                 <TableRow>
                     <TextView
-                        android:layout_width="200px"
+                        android:layout_width="150sp"
                         android:layout_height="match_parent"
-                        android:id="@+id/toltext"
-                        android:text="Tolerancia"/>
+                        android:id="@+id/toltextBisec"
+                        android:text="@string/tolviewBis"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/tolnumber"
+                        android:id="@+id/tolnumberBisec"
                         android:inputType="numberSigned|numberDecimal"
-                        android:hint="val tolerancia" />
+                        android:hint="@string/toltextBis" />
                 </TableRow>
 
                 <TableRow>
                     <TextView
-                        android:layout_width="200px"
+                        android:layout_width="150sp"
                         android:layout_height="match_parent"
-                        android:id="@+id/itertext"
-                        android:text="Iteraciones"/>
+                        android:id="@+id/itertextBisec"
+                        android:text="@string/iterviewBis"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/iternumber"
+                        android:id="@+id/iternumberBisec"
                         android:inputType="numberSigned|numberDecimal"
-                        android:hint="# iteraciones" />
+                        android:hint="@string/itertextBis" />
                 </TableRow>
             </TableLayout>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:scrollbars="none"
                 android:layout_weight="1"
                 android:fillViewport="true">
@@ -100,8 +96,7 @@
                 <TableLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/bisecc_table"
-                    android:layout_above="@+id/bisecc_result">
+                    android:id="@+id/bisecc_table">
 
                 </TableLayout>
             </HorizontalScrollView>
@@ -110,11 +105,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/bisecc_result"
-                android:layout_margin="100px"/>
+                android:layout_margin="50dp"/>
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>
