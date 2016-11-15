@@ -107,8 +107,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(a);
         }
 
-        if(id == R.id.solEcuaciones) {
+        if(id == R.id.sistemasEcuaciones) {
             Intent a = new Intent(this,SistemasDeEcuaciones.class);
+            startActivity(a);
         }
 
         return super.onOptionsItemSelected(item);
