@@ -15,13 +15,11 @@ import android.view.MenuItem;
 import android.graphics.Color;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
-import android.util.Log;
+import android.support.design.widget.Snackbar;
 
 import com.androidplot.ui.TableOrder;
 
@@ -36,6 +34,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
     private int tamaño;
     private ArrayList<ArrayList> datos = new ArrayList<>();
+    private ArrayList<Double> resultados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,7 +134,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 TableRow ttr = new TableRow(this);
                 ttr.setLayoutParams(tlp);
                 ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
-                for (int j = 0; j < tamaño; j++) {
+                for (int j = 0; j <= tamaño; j++) {
                     EditText etxt = new EditText(this);
                     etxt.setInputType(InputType.TYPE_CLASS_NUMBER);
                     //etxt.setBackgroundResource(R.drawable.table_border);
@@ -156,20 +155,25 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 }
 
 
-    protected void saveTable(){
+    protected void saveTable() {
 
         TableLayout table = (TableLayout) findViewById(R.id.ingreso_datos);
 
-        for(int i = 0; i<tamaño;i++){
+        for (int i = 0; i < tamaño; i++) {
             ArrayList<Double> fila = new ArrayList<>();
             TableRow t = (TableRow) table.getChildAt(i);
-            for(int j = 0; j< tamaño; j++){
+            for (int j = 0; j < tamaño; j++) {
                 EditText etxt = (EditText) t.getChildAt(j);
                 Double num = Double.parseDouble(etxt.getText().toString());
                 fila.add(num);
             }
             datos.add(fila);
         }
-
+        for (int i = 0; i < tamaño; i++) {
+            TableRow t = (TableRow) table.getChildAt(i);
+            EditText etxt = (EditText) t.getChildAt(tamaño);
+            Double num = Double.parseDouble(etxt.getText().toString());
+            resultados.add(num);
+        }
     }
 }
