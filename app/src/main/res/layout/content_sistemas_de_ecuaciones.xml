@@ -13,4 +13,91 @@
     tools:context="com.davidmedinaospina.appnumercico.SistemasDeEcuaciones"
     tools:showIn="@layout/app_bar_sistemas_de_ecuaciones">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Dimension de la matriz"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/textView4"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/nmatriz"
+                    android:layout_width="150dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:text="Mostrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/crear" />
+
+
+            </TableRow>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ingreso_datos"
+                    android:layout_above="@+id/ingreso_datos">
+
+                </TableLayout>
+
+
+            </HorizontalScrollView>
+
+            <Button
+                android:text="Guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guardar"
+                android:visibility="invisible" />
+
+
+        </TableLayout>
+
+
+
+
+    </ScrollView>
+
+
 </RelativeLayout>
