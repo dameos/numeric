@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_integracion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.davidmedinaospina.appnumercico.Integracion"
+    tools:showIn="@layout/app_bar_integracion">
+
+    <ImageView
+        app:srcCompat="@drawable/imagen1"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:id="@+id/imageView4"
+        android:layout_marginTop="33dp"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="a: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/imageView4"
+        android:layout_toStartOf="@+id/pointA"
+        android:layout_toLeftOf="@+id/pointA" />
+
+    <TextView
+        android:text="b: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_alignBottom="@+id/pointB"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4" />
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/pointB"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_width="60dp" />
+
+    <TextView
+        android:text="dx "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textColor="@color/ap_black"
+        android:textSize="24sp"
+        android:fontFamily="serif"
+        android:textStyle="normal|italic"
+        android:layout_alignTop="@+id/funcIntegrate"
+        android:layout_toRightOf="@+id/funcIntegrate"
+        android:layout_toEndOf="@+id/funcIntegrate" />
+
+    <EditText
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/funcIntegrate"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:hint="FunctionToIntegrate"
+        android:layout_width="180dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_above="@+id/pointA"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/pointA"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_width="60dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/numberOfPoints"
+        android:layout_below="@+id/pointA"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
+
+    <TextView
+        android:text="Cantidad de Puntos(n)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textXd"
+        android:layout_below="@+id/numberOfPoints"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/integrationMethod"
+        android:layout_width="wrap_content"
+        android:layout_above="@+id/textView9"
+        android:layout_toRightOf="@+id/textXd"
+        android:layout_toEndOf="@+id/textXd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textXd"
+        android:layout_alignStart="@+id/textXd"
+        android:layout_marginBottom="64dp"
+        android:id="@+id/resultadito"
+        android:layout_alignRight="@+id/textXd"
+        android:layout_alignEnd="@+id/textXd" />
+
+</RelativeLayout>

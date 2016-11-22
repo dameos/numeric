@@ -34,16 +34,6 @@
         android:layout_marginEnd="65dp" />
 
     <Button
-        android:text="Solucion de Ecuaciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/interpo"
-        android:layout_alignLeft="@+id/interpo"
-        android:layout_alignStart="@+id/interpo"
-        android:layout_marginTop="37dp"
-        android:id="@+id/solcionSIs" />
-
-    <Button
         android:text="Interpolacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,4 +42,24 @@
         android:layout_below="@+id/ecuacione"
         android:layout_alignLeft="@+id/ecuacione"
         android:layout_alignStart="@+id/ecuacione" />
+
+    <Button
+        android:text="Solucion de Ecuaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/solcionSIs"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/interpo"
+        android:layout_alignLeft="@+id/interpo"
+        android:layout_alignStart="@+id/interpo" />
+
+    <Button
+        android:text="Integracion Numerica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/integration"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/solcionSIs"
+        android:layout_alignLeft="@+id/solcionSIs"
+        android:layout_alignStart="@+id/solcionSIs" />
 </RelativeLayout>
