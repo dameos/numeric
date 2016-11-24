@@ -77,15 +77,15 @@ public class MatrizResult extends AppCompatActivity {
             switch (metodo) {
                 case "elimG":
                     res = EliminacionGauss(aumen, 0);
-                    Imprimir(res, false);
+                    if(!paso)Imprimir(res, false);
                     break;
                 case "elimGPP":
                     res = EliminacionGauss(aumen, 1);
-                    Imprimir(res, false);
+                    if(!paso)Imprimir(res, false);
                     break;
                 case "elimGPT":
                     res = EliminacionGauss(aumen, 2);
-                    Imprimir(res, false);
+                    if(!paso)Imprimir(res, false);
                     break;
                 case "gaussSeidel":
                     break;
@@ -93,24 +93,30 @@ public class MatrizResult extends AppCompatActivity {
                     break;
                 case "cholesky":
                     ans = CholeDoliCrout(matriz, results, 1);
-                    NameMatrix("Matriz L");
-                    Imprimir(l,true);
-                    NameMatrix("Matriz U");
-                    Imprimir(u,true);
+                    if (!paso) {
+                        NameMatrix("Matriz L");
+                        Imprimir(l,true);
+                        NameMatrix("Matriz U");
+                        Imprimir(u,true);
+                    }
                     break;
                 case "crout":
                     ans = CholeDoliCrout(matriz, results, 2);
-                    NameMatrix("Matriz L");
-                    Imprimir(l,true);
-                    NameMatrix("Matriz U");
-                    Imprimir(u,true);
+                    if (!paso) {
+                        NameMatrix("Matriz L");
+                        Imprimir(l,true);
+                        NameMatrix("Matriz U");
+                        Imprimir(u,true);
+                    }
                     break;
                 case "dolittle":
                     ans = CholeDoliCrout(matriz, results, 3);
-                    NameMatrix("Matriz L");
-                    Imprimir(l,true);
-                    NameMatrix("Matriz U");
-                    Imprimir(u,true);
+                    if (!paso) {
+                        NameMatrix("Matriz L");
+                        Imprimir(l,true);
+                        NameMatrix("Matriz U");
+                        Imprimir(u,true);
+                    }
                     break;
             }
         } catch (Exception ex) {
@@ -144,6 +150,10 @@ public class MatrizResult extends AppCompatActivity {
                 for (int j = k; j < n + 1; j++) {
                     a[i][j] = a[i][j] - mult * a[k][j];
                 }
+            }
+            if(paso) {
+                NameMatrix("Iteracion: " + Integer.toString(k));
+                Imprimir(a, false);
             }
         }
         return a;
@@ -291,7 +301,10 @@ public class MatrizResult extends AppCompatActivity {
                     throw new Exception("Sistema sin solucion");
                 }
             }
-
+            NameMatrix("L iteracion: " + Integer.toString(k));
+            Imprimir(l,true);
+            NameMatrix("U iteracion: " + Integer.toString(k));
+            Imprimir(u,true);
         }
 
         for(int i = 0;i < n; i++){    //Sust Progresiva
