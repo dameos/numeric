@@ -147,19 +147,19 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 break;
             case R.id.cholesky:
                 bun.putString("operation","cholesky");
-                Intent f = new Intent(this, FactorResult.class);
+                Intent f = new Intent(this, MatrizResult.class);
                 f.putExtras(bun);
                 startActivity(f);
                 break;
             case R.id.crout:
                 bun.putString("operation","crout");
-                Intent g = new Intent(this, FactorResult.class);
+                Intent g = new Intent(this, MatrizResult.class);
                 g.putExtras(bun);
                 startActivity(g);
                 break;
             case R.id.dolittle:
                 bun.putString("operation","dolittle");
-                Intent h = new Intent(this, FactorResult.class);
+                Intent h = new Intent(this, MatrizResult.class);
                 h.putExtras(bun);
                 startActivity(h);
                 break;
@@ -191,7 +191,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 ttr.setMinimumHeight(110);
                 for (int j = 0; j <= tamaño; j++) {
                     EditText etxt = new EditText(this);
-                    etxt.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    etxt.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
                     etxt.setHeight(100);
                     etxt.setWidth(100);
                     if(j == tamaño){
