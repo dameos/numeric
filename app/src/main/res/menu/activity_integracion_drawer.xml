@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/trapecioSencillo"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Trapecio Sencillo" />
+        <item
+            android:id="@+id/trapecioCompuesto"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Trapecio Compuesto" />
+        <item
+            android:id="@+id/simpsonUnTercio"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Simpson 1/3" />
+        <item
+            android:id="@+id/simpsonUnTercioGen"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Simpson 1/3 Generalizado" />
+        <item android:title="Simpson 3/8 "
+            android:id="@+id/simpsonTresOct"
+            android:icon="@drawable/ic_menu_share" />
+        <item android:title="Simpson 3/8 Generalizado"
+            android:id="@+id/simpsonTresOctGen"
+            android:icon="@drawable/ic_menu_share" />
+    </group>
+
+</menu>

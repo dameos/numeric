@@ -47,4 +47,5 @@
     <string name="toltextPfijo">valor delta</string>
     <string name="iterviewPfijo">Iteraciones</string>
     <string name="itertextPfijo"># iteraciones</string>
+    <string name="title_activity_integracion">Integracion</string>
 </resources>

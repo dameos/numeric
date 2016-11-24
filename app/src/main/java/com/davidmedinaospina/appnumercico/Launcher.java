@@ -15,6 +15,7 @@ public class Launcher extends Activity {
         Button interpolacion    = (Button)findViewById(R.id.interpo);
         Button ecuacionesUnaVar = (Button)findViewById(R.id.ecuacione);
         Button sitemas          = (Button)findViewById(R.id.solcionSIs);
+        Button integra          = (Button)findViewById(R.id.integration);
         interpolacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +34,13 @@ public class Launcher extends Activity {
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(Launcher.this,SistemasDeEcuaciones.class);
+                startActivity(a);
+            }
+        });
+        integra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(Launcher.this, Integracion.class);
                 startActivity(a);
             }
         });
