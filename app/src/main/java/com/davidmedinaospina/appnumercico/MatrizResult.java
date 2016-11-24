@@ -19,7 +19,7 @@ public class MatrizResult extends AppCompatActivity {
     private ArrayList<ArrayList> datos = new ArrayList<>();
     private ArrayList<Double> resultados = new ArrayList<>();
     private String metodo;
-    private Double[][] matriz = new Double[datos.size()][datos.size()];
+    //private Double[][] matriz = new Double[datos.size()][datos.size()];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

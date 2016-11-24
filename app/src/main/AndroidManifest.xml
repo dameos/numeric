@@ -62,6 +62,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MatrizResult"
+            android:label="@string/title_activity_matriz"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".SistemasDeEcuaciones"
             android:label="@string/title_activity_sistemas_de_ecuaciones"
             android:theme="@style/AppTheme.NoActionBar" />
