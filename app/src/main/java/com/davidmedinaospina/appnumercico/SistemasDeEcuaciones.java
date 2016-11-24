@@ -109,13 +109,67 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        Bundle bun = new Bundle();
+        bun.putInt("tamaño", tamaño);
+        bun.putSerializable("datos", datos);
+        bun.putSerializable("resultados", resultados);
         int id = item.getItemId();
+        switch (id){
+            case R.id.elimG:
+                bun.putString("operation", "elimG");
+                Intent a = new Intent(this, MatrizResult.class);
+                a.putExtras(bun);
+                startActivity(a);
+                break;
+            case R.id.elimGPP:
+                bun.putString("operation", "elimGPP");
+                Intent b = new Intent(this, MatrizResult.class);
+                b.putExtras(bun);
+                startActivity(b);
+                break;
+            case R.id.elimGPT:
+                bun.putString("operation", "elimGPT");
+                Intent c = new Intent(this, MatrizResult.class);
+                c.putExtras(bun);
+                startActivity(c);
+                break;
+            case R.id.gaussSeidel:
+                bun.putString("operation", "gaussSeidel");
+                Intent d = new Intent(this, MatrizResult.class);
+                d.putExtras(bun);
+                startActivity(d);
+                break;
+            case R.id.jacobi:
+                bun.putString("operation", "jacobi");
+                Intent e = new Intent(this, MatrizResult.class);
+                e.putExtras(bun);
+                startActivity(e);
+                break;
+            case R.id.cholesky:
+                bun.putString("operation","cholesky");
+                Intent f = new Intent(this, FactorResult.class);
+                f.putExtras(bun);
+                startActivity(f);
+                break;
+            case R.id.crout:
+                bun.putString("operation","crout");
+                Intent g = new Intent(this, FactorResult.class);
+                g.putExtras(bun);
+                startActivity(g);
+                break;
+            case R.id.dolittle:
+                bun.putString("operation","dolittle");
+                Intent h = new Intent(this, FactorResult.class);
+                h.putExtras(bun);
+                startActivity(h);
+                break;
 
-
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
+
     }
     protected void createTable() {
 
@@ -134,11 +188,17 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 TableRow ttr = new TableRow(this);
                 ttr.setLayoutParams(tlp);
                 ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                ttr.setMinimumHeight(110);
                 for (int j = 0; j <= tamaño; j++) {
                     EditText etxt = new EditText(this);
                     etxt.setInputType(InputType.TYPE_CLASS_NUMBER);
-                    //etxt.setBackgroundResource(R.drawable.table_border);
-                    //etxt.setLayoutParams(lparams);
+                    etxt.setHeight(100);
+                    etxt.setWidth(100);
+                    if(j == tamaño){
+                        etxt.setBackgroundResource(R.drawable.edit_border);
+                    }else{
+                        etxt.setBackgroundResource(R.drawable.table_border);
+                    }
                     ttr.addView(etxt);
                 }
                 table.addView(ttr);
@@ -175,5 +235,12 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             Double num = Double.parseDouble(etxt.getText().toString());
             resultados.add(num);
         }
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("datos", datos);
+        bundle.putSerializable("resultados",resultados);
+        bundle.putInt("tamaño",tamaño);
+        Intent a = new Intent(this,MatrizResult.class);
+
+
     }
 }
