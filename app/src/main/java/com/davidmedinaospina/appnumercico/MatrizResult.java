@@ -33,6 +33,7 @@ public class MatrizResult extends AppCompatActivity {
     private double[][] l;
     private double[][] u;
     private double[] ans;
+    private boolean paso;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -46,6 +47,7 @@ public class MatrizResult extends AppCompatActivity {
         tamaño = bundle.getInt("tamaño");
         resultados = (ArrayList<Double>) bundle.getSerializable("resultados");
         datos = (ArrayList<ArrayList<Double>>) bundle.getSerializable("datos");
+        paso = bundle.getBoolean("paso");
         metodo = bundle.getString("operation");
         matriz = new double[datos.size()][datos.size()];
         aumen = new double[datos.size()][datos.size()+1];

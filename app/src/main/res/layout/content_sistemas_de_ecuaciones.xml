@@ -80,9 +80,13 @@
                     android:layout_above="@+id/ingreso_datos">
 
                 </TableLayout>
-
-
             </HorizontalScrollView>
+
+            <CheckBox
+                android:text="Paso a paso"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/checkP" />
 
             <Button
                 android:text="Guardar"

@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.graphics.Color;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -35,6 +36,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     private int tamaño;
     private ArrayList<ArrayList> datos = new ArrayList<>();
     private ArrayList<Double> resultados = new ArrayList<>();
+    private boolean paso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -218,7 +220,8 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     protected void saveTable() {
 
         TableLayout table = (TableLayout) findViewById(R.id.ingreso_datos);
-
+        CheckBox check = (CheckBox) findViewById(R.id.checkP);
+        paso = check.isEnabled();
         for (int i = 0; i < tamaño; i++) {
             ArrayList<Double> fila = new ArrayList<>();
             TableRow t = (TableRow) table.getChildAt(i);
@@ -239,7 +242,9 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         bundle.putSerializable("datos", datos);
         bundle.putSerializable("resultados",resultados);
         bundle.putInt("tamaño",tamaño);
+        bundle.putBoolean("paso", paso);
         Intent a = new Intent(this,MatrizResult.class);
+
 
 
     }
