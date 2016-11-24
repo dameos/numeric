@@ -115,6 +115,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         bun.putInt("tamaño", tamaño);
         bun.putSerializable("datos", datos);
         bun.putSerializable("resultados", resultados);
+        bun.putBoolean("paso",paso);
         int id = item.getItemId();
         switch (id){
             case R.id.elimG:
