@@ -360,4 +360,21 @@ public class MatrizResult extends AppCompatActivity {
             table.addView(ttr);
         }
     }
+
+    public void ImprimirArray(double[] a){
+        TableLayout table = (TableLayout) findViewById(R.id.result_table);
+        TableRow ttr = new TableRow(this);
+        TableRow.LayoutParams tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+        ttr.setLayoutParams(tlp);
+        ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        for(int i = 0; i < a.length; i++){
+            TextView n = new TextView(this);
+            n.setBackgroundResource(R.drawable.table_border_title);
+            n.setText(String.valueOf(a[i]));
+            n.setHeight(50);
+            n.setWidth(120);
+            ttr.addView(n);
+        }
+        table.addView(ttr);
+    }
 }
