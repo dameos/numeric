@@ -109,7 +109,7 @@ public class BusqInc extends AppCompatActivity {
                             busqIncResultView.setText(x1 + " es una raíz.");
                             return;
                         } else {
-                            String res = ((y0 * y1) < 0) ? "Raíz entre los valores (" + x0 + "," + x1 + ")" : "Fracasé, soy imbécil.";
+                            String res = ((y0 * y1) < 0) ? "Raíz entre los valores (" + x0 + "," + x1 + ")" : "No se pudo encontrar raíz.";
                             busqIncResultView.setText(res);
                             return;
                         }

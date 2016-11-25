@@ -120,7 +120,7 @@ public class Bisecc extends AppCompatActivity {
                         xsView.setText(" " + String.valueOf(xs) + " ");
                         xmView.setText(" " + String.valueOf(xm) + " ");
                         fxView.setText(" " + String.valueOf(ym) + " ");
-                        errorView.setText(" " + String.valueOf(xi) + " ");
+                        errorView.setText(" " + String.valueOf(err) + " ");
 
                         tr.addView(iterView);
                         tr.addView(xiView);
