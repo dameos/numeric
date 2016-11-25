@@ -308,16 +308,16 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         etxt.setHeight(100);
         iter.addView(txt);
         iter.addView(etxt);
-        TableRow iter1 = new TableRow(this);
+        TableRow tol = new TableRow(this);
         TextView txt1 = new TextView(this);
         txt.setText("Tolerancia");
         EditText etxt1 = new EditText(this);
         etxt.setKeyListener(new DigitsKeyListener());
         etxt.setWidth(100);
         etxt.setHeight(100);
-        iter.addView(txt);
-        iter.addView(etxt);
-        table.addView(iter);
+        iter.addView(txt1);
+        iter.addView(etxt1);
+        table.addView(tol);
         table.addView(iter);
         table.addView(ttr);
     }
