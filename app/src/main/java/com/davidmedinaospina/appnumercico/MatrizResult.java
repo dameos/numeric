@@ -37,11 +37,7 @@ public class MatrizResult extends AppCompatActivity {
     private ArrayList<Double> x0 = new ArrayList<>();
     private double tolerance;
     private int iterations;
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+    private double relas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +51,14 @@ public class MatrizResult extends AppCompatActivity {
         metodo = bundle.getString("operation");
         matriz = new double[datos.size()][datos.size()];
         aumen = new double[datos.size()][datos.size()+1];
-        iterations = bundle.getInt("iterations");
-        tolerance = bundle.getDouble("tolerance");
-        x0 = (ArrayList<Double>) bundle.getSerializable("x0");
+        marcas = new int[tamaño];
         TextView met = (TextView) findViewById(R.id.metodo);
         met.setTextSize(20);
         met.setText(metodo);
+
+        for(int i = 0; i < marcas.length; i++){
+            marcas[i] = i;
+        }
 
         for (int i = 0; i < tamaño; i++) {
             ArrayList<Double> temp = datos.get(i);
@@ -85,18 +83,67 @@ public class MatrizResult extends AppCompatActivity {
                 case "elimG":
                     res = EliminacionGauss(aumen, 0);
                     if(!paso)Imprimir(res, false);
+                    ans = SustitucionRegresiva(res);
+                    String text = "";
+                    for (int i = 0; i < marcas.length; i++) {
+                        text = text + " " +  "X" +  String.valueOf(marcas[i]);
+                    }
+                    NameMatrix(text);
+                    ImprimirArray(ans);
                     break;
                 case "elimGPP":
                     res = EliminacionGauss(aumen, 1);
                     if(!paso)Imprimir(res, false);
+                    ans = SustitucionRegresiva(res);
+                    String text1 = "";
+                    for (int i = 0; i < marcas.length; i++) {
+                        text1 = text1 + " " + "X" + String.valueOf(marcas[i]);
+                    }
+                    NameMatrix(text1);
+                    ImprimirArray(ans);
                     break;
                 case "elimGPT":
                     res = EliminacionGauss(aumen, 2);
                     if(!paso)Imprimir(res, false);
+                    ans = SustitucionRegresiva(res);
+                    String text2 = "";
+                    for (int i = 0; i < marcas.length; i++) {
+                        text2 = text2 + " " + "X" + String.valueOf(marcas[i]);
+                    }
+                    NameMatrix(text2);
+                    ImprimirArray(ans);
                     break;
                 case "gaussSeidel":
+                    iterations = bundle.getInt("iterations");
+                    tolerance = bundle.getDouble("tolerance");
+                    x0 = (ArrayList<Double>) bundle.getSerializable("x0");
+                    relas = (double)bundle.getDouble("relax");
+                    double[] x0a = new double[x0.size()];
+                    for(int i = 0; i < x0a.length; i++) {
+                        x0a[i] = x0.get(i);
+                    }
+                    if(!paso) {
+                        res = SeidelJacobi(x0a, tolerance, iterations, matriz, results, relas, false);
+                        ImprimirRes();
+                        ImprimirArray(res[0]);
+                        NameMatrix("Valor de disp: " + String.valueOf(res[1]));
+                    }
                     break;
                 case "jacobi":
+                    iterations = bundle.getInt("iterations");
+                    tolerance = bundle.getDouble("tolerance");
+                    x0 = (ArrayList<Double>) bundle.getSerializable("x0");
+                    relas = (double)bundle.getDouble("relax");
+                    double[] x0a1 = new double[x0.size()];
+                    for(int i = 0; i < x0a1.length; i++) {
+                        x0a1[i] = x0.get(i);
+                    }
+                    if(!paso) {
+                        res = SeidelJacobi(x0a1, tolerance, iterations, matriz, results, relas, true);
+                        ImprimirRes();
+                        ImprimirArray(res[0]);
+                        NameMatrix(String.valueOf(res[1]));
+                    }
                     break;
                 case "cholesky":
                     ans = CholeDoliCrout(matriz, results, 1);
@@ -105,6 +152,8 @@ public class MatrizResult extends AppCompatActivity {
                         Imprimir(l,true);
                         NameMatrix("Matriz U");
                         Imprimir(u,true);
+                        ImprimirRes();
+                        ImprimirArray(ans);
                     }
                     break;
                 case "crout":
@@ -114,6 +163,9 @@ public class MatrizResult extends AppCompatActivity {
                         Imprimir(l,true);
                         NameMatrix("Matriz U");
                         Imprimir(u,true);
+
+                        ImprimirRes();
+                        ImprimirArray(ans);
                     }
                     break;
                 case "dolittle":
@@ -123,6 +175,8 @@ public class MatrizResult extends AppCompatActivity {
                         Imprimir(l,true);
                         NameMatrix("Matriz U");
                         Imprimir(u,true);
+                        ImprimirRes();
+                        ImprimirArray(ans);
                     }
                     break;
             }
@@ -140,6 +194,14 @@ public class MatrizResult extends AppCompatActivity {
         n.setText(name);
         ttr.addView(n);
         table.addView(ttr);
+    }
+
+    public void ImprimirRes() {
+        String text = "";
+        for (int i = 0; i < matriz.length; i ++) {
+            text = text + " " + "X" + String.valueOf(i);
+        }
+        NameMatrix(text);
     }
 
 
@@ -329,6 +391,132 @@ public class MatrizResult extends AppCompatActivity {
             }
             res[i] = (aux[i]-cont)/u[i][i];
         }
+        return res;
+    }
+
+    public double[][] SeidelJacobi(double[] x0,double tol, int iter, double[][] matA, double[] vecB, double rel, boolean jac) throws Exception {
+
+        int cont = 0;
+        double disp = tol +1;
+        double[] x1;
+        double[] aux;
+
+        if(iter > 0){
+            if(tol > 0){
+
+                while(disp > tol && cont < iter){
+
+                    if(jac){
+                        x1 = calcX1Jac(x0, matA, vecB);
+                    }else{
+                        x1 = calcX1Seid(x0, matA, vecB);
+                    }
+
+                    aux = restaVec(x1,x0);
+                    disp = calcNorma(aux)/calcNorma(x1);
+                    if(paso){
+                        NameMatrix("Iteracion: " + cont);
+                        ImprimirArray(x1);
+                    }
+                    for(int i = 0; i < x0.length; i++){
+
+                        x1[i] = (rel*x1[i])+((1-rel)*x0[1]);
+
+                    }
+
+                    x0 = x1;
+                    cont++;
+                }
+                if(disp < tol){
+
+                    double[][] res = {x0,{disp}};
+                    return res;
+
+                }else{
+                    throw new Exception("Error: Exedio iteraciones");
+                }
+
+
+            }else{
+                throw new Exception("Tolerancia menor que 0");
+            }
+        }else{
+            throw new Exception("Iteraciones menores o iguales que 0");
+        }
+    }
+
+    public double[] calcX1Jac(double[] x0, double[][] matA, double[] vecB) throws Exception {
+        int n = x0.length;
+        double[] res = new double[n];
+        double cont;
+
+        for(int i = 0; i < n; i++){
+            cont = 0;
+            for(int j = 0; j < n; j++){
+                if(i != j){
+                    cont += matA[i][j]*x0[j];
+                }
+            }
+            if(matA[i][i] != 0){
+                res[i] = (vecB[i] - cont)/matA[i][i];
+            }else{
+                throw new Exception("El sistema posiblemente no tiene solucion");
+            }
+        }
+
+        return res;
+
+    }
+
+    public double[] calcX1Seid(double[] x0, double[][] matA, double[] vecB) throws Exception {
+
+        int n = x0.length;
+        double[] res = new double[n];
+        double cont;
+
+        for(int i = 0; i < n; i++){
+            res[i] = x0[i];
+        }
+
+        for(int i = 0; i < n; i++){
+            cont = 0;
+            for(int j = 0; j < n; j++){
+                if(i != j){
+                    cont += matA[i][j]*res[j];
+                }
+            }
+            if(matA[i][i] != 0){
+                res[i] = (vecB[i] - cont)/matA[i][i];
+            }else{
+                throw new Exception("El sistema posiblemente no tiene solucion");
+            }
+        }
+
+        return res;
+
+    }
+
+    public double calcNorma(double[] x0) {
+
+        double cont = 0;
+
+        for(int i = 0; i < x0.length;i++){
+
+            cont += Math.abs(x0[i]) * Math.abs(x0[i]);
+
+        }
+        return Math.sqrt(cont);
+    }
+
+    public double[] restaVec(double[] x0, double[] x1) {
+
+        int n = x0.length;
+        double[] res = new double[n];
+
+        for(int i = 0; i < n; i++){
+            res[i] = x0[i] - x1[i];
+        }
+
         return res;
     }
 
