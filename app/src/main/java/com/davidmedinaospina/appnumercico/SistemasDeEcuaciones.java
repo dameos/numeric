@@ -350,6 +350,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         txt1.setText("Tolerancia");
         EditText etxt1 = new EditText(this);
         etxt1.setKeyListener(new DigitsKeyListener());
+        etxt1.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         etxt1.setWidth(100);
         etxt1.setHeight(100);
         tol.addView(txt1);
