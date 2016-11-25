@@ -179,4 +179,15 @@
         android:layout_alignLeft="@+id/editText8"
         android:layout_alignStart="@+id/editText8" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/amoysenor"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/editText8"
+        android:id="@+id/zubie"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

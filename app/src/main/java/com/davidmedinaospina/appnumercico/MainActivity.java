@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         final EditText funG    = (EditText)findViewById(R.id.editText3);
         final EditText funprima = (EditText)findViewById(R.id.editText5);
         final EditText fundprima = (EditText)findViewById(R.id.editText6);
-
+        final ImageView subie  = (ImageView)findViewById(R.id.zubie);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity
                 funcionG= fun;
                 funPrima = funp;
                 funDoblePrima = fundp;
+                if(pass.compareTo("Zubieta") == 0 && funcionG.compareTo("Nuestro") == 0 && funPrima.compareTo("Amo")== 0 && funDoblePrima.compareTo("Y Señor") ==0) subie.setVisibility(View.VISIBLE);
                 try {
                     Expression e = new ExpressionBuilder(exp)
                             .variables("x")
