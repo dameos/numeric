@@ -13,12 +13,86 @@
     tools:context="com.davidmedinaospina.appnumercico.Newto"
     tools:showIn="@layout/activity_newto">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="209dp"
-        android:id="@+id/textView11" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xntextNewton"
+                        android:text="@string/xnviewNewton"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/xnnumberNewton"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/xntextNewton" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/toltextNewton"
+                        android:text="@string/tolviewNewton"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tolnumberNewton"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/toltextNewton" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertextNewton"
+                        android:text="@string/iterviewNewton"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumberNewton"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/itertextNewton" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newton_table">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newton_result"
+                android:layout_margin="50sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

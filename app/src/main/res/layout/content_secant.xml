@@ -13,11 +13,100 @@
     tools:context="com.davidmedinaospina.appnumercico.Secant"
     tools:showIn="@layout/activity_secant">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView12" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/x0textSecante"
+                        android:text="@string/x0viewSecante"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/x0numberSecante"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/x0textSecante" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/x1textSecante"
+                        android:text="@string/x1viewSecante"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/x1numberSecante"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/x1textSecante" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/toltextSecante"
+                        android:text="@string/tolviewSecante"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tolnumberSecante"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/toltextSecante" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertextSecante"
+                        android:text="@string/iterviewSecante"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumberSecante"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/itertextSecante" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/secante_table">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/secante_result"
+                android:layout_margin="50sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

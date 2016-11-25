@@ -20,7 +20,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    String pass, funcionG;
+    String pass, funcionG, funPrima, funDoblePrima;
     String rx1, rx2, ry1, ry2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,10 @@ public class MainActivity extends AppCompatActivity
         final EditText rangoX2 = (EditText)findViewById(R.id.editText8);
         final EditText rangoY1 = (EditText)findViewById(R.id.editText7);
         final EditText rangoY2 = (EditText)findViewById(R.id.editText9);
-        final EditText funG    = (EditText)findViewById(R.id.editText3); //EditText DONDE ESTA LA PUTA G()
+        final EditText funG    = (EditText)findViewById(R.id.editText3);
+        final EditText funprima = (EditText)findViewById(R.id.editText5);
+        final EditText fundprima = (EditText)findViewById(R.id.editText6);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +47,17 @@ public class MainActivity extends AppCompatActivity
                 if (!num.isEmpty()) a = Double.parseDouble(num);
                 String exp = mEdit.getText().toString();
                 String fun = funG.getText().toString();
+                String funp = funprima.getText().toString();
+                String fundp = fundprima.getText().toString();
+
                 rx1 = rangoX1.getText().toString();
                 rx2 = rangoX2.getText().toString();
                 ry1 = rangoY1.getText().toString();
                 ry2 = rangoY2.getText().toString();
                 pass = exp;
-                funcionG= fun; //PONGO LA GLOBAL CON LA PUTA G()
+                funcionG= fun;
+                funPrima = funp;
+                funDoblePrima = fundp;
                 try {
                     Expression e = new ExpressionBuilder(exp)
                             .variables("x")
@@ -143,12 +151,13 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.puntFijo:
                 Intent d = new Intent(this,PuntoFijo.class);
-                bun.putString("funcG",funcionG);    //METO LA HPTA GLOBAL EN EL BUNDLE
+                bun.putString("funcG",funcionG);
                 d.putExtras(bun);
                 startActivity(d);
                 break;
             case R.id.newT:
                 Intent e = new Intent(this,Newto.class);
+                bun.putString("funcprima", funPrima);
                 e.putExtras(bun);
                 startActivity(e);
                 break;
@@ -159,6 +168,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.raicMul:
                 Intent g = new Intent(this,RaicesMult.class);
+                bun.putString("funcprima", funPrima);
+                bun.putString("funcdprima", funDoblePrima);
                 g.putExtras(bun);
                 startActivity(g);
                 break;

@@ -34,21 +34,23 @@ public class PuntoFijo extends AppCompatActivity {
             }});
     }
 
-    protected void createTable(String exp, String g) {
+    protected void createTable(String fn, String gn) {
         final TextView pFijoResultView = (TextView)findViewById(R.id.pfijo_result);
 
-        final EditText xiEdit = (EditText)findViewById(R.id.xinumberBisec);
-        final EditText xsEdit = (EditText)findViewById(R.id.xsnumberBisec);
-        final EditText tolEdit = (EditText)findViewById(R.id.tolnumberBisec);
-        final EditText iterEdit = (EditText)findViewById(R.id.iternumberBisec);
+        final EditText xnEdit = (EditText)findViewById(R.id.xnnumberPfijo);
+        final EditText tolEdit = (EditText)findViewById(R.id.tolnumberPfijo);
+        final EditText iterEdit = (EditText)findViewById(R.id.iternumberPfijo);
 
-        Double xn = Double.parseDouble(xiEdit.getText().toString());
+        Double xn = Double.parseDouble(xnEdit.getText().toString());
         Double tol = Double.parseDouble(tolEdit.getText().toString());
         int iter = Integer.parseInt(iterEdit.getText().toString());
 
         // Creando el analizador para la función
         try {
-            Expression e = new ExpressionBuilder(exp)
+            Expression f = new ExpressionBuilder(fn)
+                    .variables("x").build();
+
+            Expression g = new ExpressionBuilder(gn)
                     .variables("x").build();
 
             // Crear tabla para ingresar los datos obtenidos por el método
@@ -82,9 +84,8 @@ public class PuntoFijo extends AppCompatActivity {
 
             int cont;
             if (iter > 0) {
-                double fx = e.setVariable("x", xn).evaluate();
-                double fxa = e.setVariable("x", fx + 1.0f).evaluate();
-                double error = tol + 1.0f;
+                double fx = f.setVariable("x", xn).evaluate();
+                double error = tol + 1.0;
                 double xna = xn;
                 cont = 1;
                 while ((fx != 0) && (error > tol) && (cont < iter)) {
@@ -115,8 +116,8 @@ public class PuntoFijo extends AppCompatActivity {
                     table.addView(tr,cont);
 
                     xna = xn;
-                    xn = e.setVariable("x", xn).evaluate();
-                    fx = e.setVariable("x", xn).evaluate();
+                    xn = g.setVariable("x", xn).evaluate();
+                    fx = f.setVariable("x", xn).evaluate();
                     error = Math.abs(xn - xna);
                     cont++;
                 }

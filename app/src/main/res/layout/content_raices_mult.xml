@@ -13,11 +13,86 @@
     tools:context="com.davidmedinaospina.appnumercico.RaicesMult"
     tools:showIn="@layout/activity_raices_mult">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView13" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/xntextRMultiples"
+                        android:text="@string/xnviewRMultiples"/>
+                    <EditText
+                        android:layout_height="match_parent"
+                        android:id="@+id/xnnumberRMultiples"
+                        android:layout_width="match_parent"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/xntextRMultiples" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/toltextRMultiples"
+                        android:text="@string/tolviewRMultiples"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tolnumberRMultiples"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/toltextRMultiples" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="150sp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itertextRMultiples"
+                        android:text="@string/iterviewRMultiples"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iternumberRMultiples"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:hint="@string/itertextRMultiples" />
+                </TableRow>
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rmultiples_table">
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rmultiples_result"
+                android:layout_margin="50sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

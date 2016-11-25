@@ -47,5 +47,29 @@
     <string name="toltextPfijo">valor delta</string>
     <string name="iterviewPfijo">Iteraciones</string>
     <string name="itertextPfijo"># iteraciones</string>
+
     <string name="title_activity_integracion">Integracion</string>
+
+    <string name="xnviewNewton">x0</string>
+    <string name="xntextNewton">x inicial</string>
+    <string name="tolviewNewton">Delta</string>
+    <string name="toltextNewton">valor delta</string>
+    <string name="iterviewNewton">Iteraciones</string>
+    <string name="itertextNewton"># iteraciones</string>
+
+    <string name="x0viewSecante">x0</string>
+    <string name="x0textSecante">x inicial</string>
+    <string name="x1viewSecante">x0</string>
+    <string name="x1textSecante">x inicial</string>
+    <string name="tolviewSecante">Delta</string>
+    <string name="toltextSecante">valor delta</string>
+    <string name="iterviewSecante">Iteraciones</string>
+    <string name="itertextSecante"># iteraciones</string>
+
+    <string name="xnviewRMultiples">x0</string>
+    <string name="xntextRMultiples">x inicial</string>
+    <string name="tolviewRMultiples">Delta</string>
+    <string name="toltextRMultiples">valor delta</string>
+    <string name="iterviewRMultiples">Iteraciones</string>
+    <string name="itertextRMultiples"># iteraciones</string>
 </resources>
