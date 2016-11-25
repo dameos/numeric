@@ -3,6 +3,7 @@ package com.davidmedinaospina.appnumercico;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.method.DigitsKeyListener;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -276,6 +277,9 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         TextView txt = new TextView(this);
         txt.setText("Valor de la relajacion");
         EditText etxt = new EditText(this);
+        etxt.setKeyListener(new DigitsKeyListener());
+        etxt.setHeight(100);
+        etxt.setWidth(100);
         etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         ttr.addView(txt);
         ttr.addView(etxt);
@@ -291,8 +295,30 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             EditText etxt = new EditText(this);
             etxt.setWidth(100);
             etxt.setHeight(100);
+            etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            etxt.setKeyListener(new DigitsKeyListener());
             ttr.addView(etxt);
         }
+        TableRow iter = new TableRow(this);
+        TextView txt = new TextView(this);
+        txt.setText("Numero de iteraciones");
+        EditText etxt = new EditText(this);
+        etxt.setKeyListener(new DigitsKeyListener());
+        etxt.setWidth(100);
+        etxt.setHeight(100);
+        iter.addView(txt);
+        iter.addView(etxt);
+        TableRow iter1 = new TableRow(this);
+        TextView txt1 = new TextView(this);
+        txt.setText("Tolerancia");
+        EditText etxt1 = new EditText(this);
+        etxt.setKeyListener(new DigitsKeyListener());
+        etxt.setWidth(100);
+        etxt.setHeight(100);
+        iter.addView(txt);
+        iter.addView(etxt);
+        table.addView(iter);
+        table.addView(iter);
         table.addView(ttr);
     }
 }
