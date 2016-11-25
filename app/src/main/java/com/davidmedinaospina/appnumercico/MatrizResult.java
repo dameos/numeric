@@ -34,6 +34,10 @@ public class MatrizResult extends AppCompatActivity {
     private double[][] u;
     private double[] ans;
     private boolean paso;
+    private ArrayList<Double> x0 = new ArrayList<>();
+    private double tolerance;
+    private int iterations;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -51,6 +55,9 @@ public class MatrizResult extends AppCompatActivity {
         metodo = bundle.getString("operation");
         matriz = new double[datos.size()][datos.size()];
         aumen = new double[datos.size()][datos.size()+1];
+        iterations = bundle.getInt("iterations");
+        tolerance = bundle.getDouble("tolerance");
+        x0 = (ArrayList<Double>) bundle.getSerializable("x0");
         TextView met = (TextView) findViewById(R.id.metodo);
         met.setTextSize(20);
         met.setText(metodo);

@@ -39,6 +39,10 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     private ArrayList<ArrayList> datos = new ArrayList<>();
     private ArrayList<Double> resultados = new ArrayList<>();
     private boolean paso;
+    private ArrayList<Double> x0 = new ArrayList<>();
+    private int iterations;
+    private double tolerance;
+    private double relax;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +136,10 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         bun.putSerializable("datos", datos);
         bun.putSerializable("resultados", resultados);
         bun.putBoolean("paso",paso);
+        bun.putInt("iterations",iterations);
+        bun.putDouble("tolerance",tolerance);
+        bun.putSerializable("x0",x0);
+        bun.putDouble("relax",relax);
         int id = item.getItemId();
         switch (id){
             case R.id.elimG:
@@ -265,6 +273,10 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         bundle.putSerializable("resultados",resultados);
         bundle.putInt("tamaño",tamaño);
         bundle.putBoolean("paso", paso);
+        bundle.putInt("iterations",iterations);
+        bundle.putDouble("tolerance",tolerance);
+        bundle.putSerializable("x0",x0);
+        bundle.putDouble("relax",relax);
         Intent a = new Intent(this,MatrizResult.class);
 
 
