@@ -331,8 +331,8 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             EditText etxt = new EditText(this);
             etxt.setWidth(100);
             etxt.setHeight(100);
-            etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             etxt.setKeyListener(new DigitsKeyListener());
+            etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             ttr.addView(etxt);
         }
         TableRow iter = new TableRow(this);
