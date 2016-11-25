@@ -96,6 +96,7 @@ public class MatrizResult extends AppCompatActivity {
                     res = EliminacionGauss(aumen, 1);
                     if(!paso)Imprimir(res, false);
                     ans = SustitucionRegresiva(res);
+                    NameMatrix("");
                     String text1 = "";
                     for (int i = 0; i < marcas.length; i++) {
                         text1 = text1 + " " + "X" + String.valueOf(marcas[i]);
@@ -107,6 +108,7 @@ public class MatrizResult extends AppCompatActivity {
                     res = EliminacionGauss(aumen, 2);
                     if(!paso)Imprimir(res, false);
                     ans = SustitucionRegresiva(res);
+                    NameMatrix("");
                     String text2 = "";
                     for (int i = 0; i < marcas.length; i++) {
                         text2 = text2 + " " + "X" + String.valueOf(marcas[i]);
@@ -198,13 +200,13 @@ public class MatrizResult extends AppCompatActivity {
     }
 
     public void ImprimirRes() {
+        NameMatrix("");
         String text = "";
         for (int i = 0; i < matriz.length; i ++) {
             text = text + " " + "X" + String.valueOf(i);
         }
         NameMatrix(text);
     }
-
 
     public double[][] EliminacionGauss(double[][] a, int piv) {
         int n = a.length;
@@ -371,10 +373,12 @@ public class MatrizResult extends AppCompatActivity {
                     throw new Exception("Sistema sin solucion");
                 }
             }
-            NameMatrix("L iteracion: " + Integer.toString(k));
-            Imprimir(l,true);
-            NameMatrix("U iteracion: " + Integer.toString(k));
-            Imprimir(u,true);
+            if(paso) {
+                NameMatrix("L iteracion: " + Integer.toString(k));
+                Imprimir(l, true);
+                NameMatrix("U iteracion: " + Integer.toString(k));
+                Imprimir(u, true);
+            }
         }
 
         for(int i = 0;i < n; i++){    //Sust Progresiva
