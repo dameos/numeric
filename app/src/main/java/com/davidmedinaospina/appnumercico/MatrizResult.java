@@ -87,7 +87,7 @@ public class MatrizResult extends AppCompatActivity {
                     NameMatrix("");
                     String text = "";
                     for (int i = 0; i < marcas.length; i++) {
-                        text = text + " " +  "X" +  String.valueOf(marcas[i]);
+                        text = text + "  " +  "X" +  String.valueOf(marcas[i]);
                     }
                     NameMatrix(text);
                     ImprimirArray(ans);
@@ -99,7 +99,7 @@ public class MatrizResult extends AppCompatActivity {
                     NameMatrix("");
                     String text1 = "";
                     for (int i = 0; i < marcas.length; i++) {
-                        text1 = text1 + " " + "X" + String.valueOf(marcas[i]);
+                        text1 = text1 + "  " + "X" + String.valueOf(marcas[i]);
                     }
                     NameMatrix(text1);
                     ImprimirArray(ans);
@@ -111,7 +111,7 @@ public class MatrizResult extends AppCompatActivity {
                     NameMatrix("");
                     String text2 = "";
                     for (int i = 0; i < marcas.length; i++) {
-                        text2 = text2 + " " + "X" + String.valueOf(marcas[i]);
+                        text2 = text2 + "  " + "X" + String.valueOf(marcas[i]);
                     }
                     NameMatrix(text2);
                     ImprimirArray(ans);
@@ -203,7 +203,7 @@ public class MatrizResult extends AppCompatActivity {
         NameMatrix("");
         String text = "";
         for (int i = 0; i < matriz.length; i ++) {
-            text = text + " " + "X" + String.valueOf(i);
+            text = text + "  " + "X" + String.valueOf(i);
         }
         NameMatrix(text);
     }
@@ -561,7 +561,6 @@ public class MatrizResult extends AppCompatActivity {
         ttr.setLayoutParams(tlp);
         for(int i = 0; i < a.length; i++){
             TextView n = new TextView(this);
-            n.setBackgroundResource(R.drawable.table_border_title);
             n.setText(String.valueOf(a[i]));
             n.setHeight(50);
             n.setWidth(120);
