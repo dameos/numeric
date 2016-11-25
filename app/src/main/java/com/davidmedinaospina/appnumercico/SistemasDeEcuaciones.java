@@ -44,6 +44,8 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     private int iterations;
     private double tolerance;
     private double relax;
+    private boolean bt1 = false;
+    private boolean bt2 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +75,14 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         rela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bt1 = true;
                 relajacion();
             }});
 
         iter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bt2 = true;
                 iteraciones();
             }});
         
@@ -137,10 +141,12 @@ public class SistemasDeEcuaciones extends AppCompatActivity
         bun.putSerializable("datos", datos);
         bun.putSerializable("resultados", resultados);
         bun.putBoolean("paso",paso);
-        bun.putInt("iterations",iterations);
-        bun.putDouble("tolerance",tolerance);
-        bun.putSerializable("x0",x0);
-        bun.putDouble("relax",relax);
+        if(bt2){
+            bun.putInt("iterations",iterations);
+            bun.putDouble("tolerance",tolerance);
+            bun.putSerializable("x0",x0);
+        }
+        if(bt1)bun.putDouble("relax",relax);
         int id = item.getItemId();
         switch (id){
             case R.id.elimG:
@@ -269,38 +275,41 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             Double num = Double.parseDouble(etxt.getText().toString());
             resultados.add(num);
         }
-
-        TableLayout rela = (TableLayout) findViewById(R.id.relajaciont);
-        TableRow trela = (TableRow) rela.getChildAt(0);
-        EditText erela = (EditText) trela.getChildAt(1);
-        relax = Double.parseDouble(erela.getText().toString());
-
-        TableLayout iter = (TableLayout) findViewById(R.id.iterativost);
-        TableRow ttol = (TableRow) iter.getChildAt(0);
-        EditText tol = (EditText) ttol.getChildAt(1);
-        tolerance = Double.parseDouble(tol.getText().toString());
-
-        TableRow titer = (TableRow) iter.getChildAt(1);
-        EditText eiter = (EditText) titer.getChildAt(1);
-        iterations = Integer.parseInt(tol.getText().toString());
-
-
-        TableRow tx0 = (TableRow) iter.getChildAt(2);
-        for(int i = 0; i < tamaño; i++){
-            EditText ex0 = (EditText) tx0.getChildAt(i);
-            Double x =  Double.parseDouble(ex0.getText().toString());
-            x0.add(x);
+        if(bt1) {
+            TableLayout rela = (TableLayout) findViewById(R.id.relajaciont);
+            TableRow trela = (TableRow) rela.getChildAt(0);
+            EditText erela = (EditText) trela.getChildAt(1);
+            relax = Double.parseDouble(erela.getText().toString());
         }
+        if(bt2) {
+            TableLayout iter = (TableLayout) findViewById(R.id.iterativost);
+            TableRow ttol = (TableRow) iter.getChildAt(0);
+            EditText tol = (EditText) ttol.getChildAt(1);
+            tolerance = Double.parseDouble(tol.getText().toString());
 
+            TableRow titer = (TableRow) iter.getChildAt(1);
+            EditText eiter = (EditText) titer.getChildAt(1);
+            iterations = Integer.parseInt(tol.getText().toString());
+
+
+            TableRow tx0 = (TableRow) iter.getChildAt(2);
+            for (int i = 0; i < tamaño; i++) {
+                EditText ex0 = (EditText) tx0.getChildAt(i);
+                Double x = Double.parseDouble(ex0.getText().toString());
+                x0.add(x);
+            }
+        }
         Bundle bundle = new Bundle();
         bundle.putSerializable("datos", datos);
         bundle.putSerializable("resultados",resultados);
         bundle.putInt("tamaño",tamaño);
         bundle.putBoolean("paso", paso);
-        bundle.putInt("iterations",iterations);
-        bundle.putDouble("tolerance",tolerance);
-        bundle.putSerializable("x0",x0);
-        bundle.putDouble("relax",relax);
+        if(bt2) {
+            bundle.putInt("iterations", iterations);
+            bundle.putDouble("tolerance", tolerance);
+            bundle.putSerializable("x0", x0);
+        }
+        if(bt1)bundle.putDouble("relax",relax);
         Intent a = new Intent(this,MatrizResult.class);
 
 
