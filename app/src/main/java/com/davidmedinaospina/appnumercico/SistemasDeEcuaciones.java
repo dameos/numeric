@@ -2,6 +2,7 @@ package com.davidmedinaospina.appnumercico;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.text.InputType;
 import android.text.method.DigitsKeyListener;
 import android.view.View;
@@ -268,6 +269,29 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             Double num = Double.parseDouble(etxt.getText().toString());
             resultados.add(num);
         }
+
+        TableLayout rela = (TableLayout) findViewById(R.id.relajaciont);
+        TableRow trela = (TableRow) rela.getChildAt(0);
+        EditText erela = (EditText) trela.getChildAt(1);
+        relax = Double.parseDouble(erela.getText().toString());
+
+        TableLayout iter = (TableLayout) findViewById(R.id.iterativost);
+        TableRow ttol = (TableRow) iter.getChildAt(0);
+        EditText tol = (EditText) ttol.getChildAt(1);
+        tolerance = Double.parseDouble(tol.getText().toString());
+
+        TableRow titer = (TableRow) iter.getChildAt(1);
+        EditText eiter = (EditText) titer.getChildAt(1);
+        iterations = Integer.parseInt(tol.getText().toString());
+
+
+        TableRow tx0 = (TableRow) iter.getChildAt(2);
+        for(int i = 0; i < tamaño; i++){
+            EditText ex0 = (EditText) tx0.getChildAt(i);
+            Double x =  Double.parseDouble(ex0.getText().toString());
+            x0.add(x);
+        }
+
         Bundle bundle = new Bundle();
         bundle.putSerializable("datos", datos);
         bundle.putSerializable("resultados",resultados);
