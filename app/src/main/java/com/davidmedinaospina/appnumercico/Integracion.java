@@ -1,5 +1,6 @@
 package com.davidmedinaospina.appnumercico;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -150,9 +151,19 @@ public class Integracion extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.solEcuaciones) {
+            Intent a = new Intent(this,MainActivity.class);
+            startActivity(a);
+        }
+
+        if(id == R.id.sistemasEcuaciones) {
+            Intent a = new Intent(this,SistemasDeEcuaciones.class);
+            startActivity(a);
+        }
+
+        if(id == R.id.interpolation) {
+            Intent a = new Intent(this,Interpolacion.class);
+            startActivity(a);
         }
 
         return super.onOptionsItemSelected(item);

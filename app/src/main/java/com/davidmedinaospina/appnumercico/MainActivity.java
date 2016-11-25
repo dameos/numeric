@@ -125,6 +125,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(a);
         }
 
+        if(id == R.id.integration) {
+            Intent a = new Intent(this,Integracion.class);
+            startActivity(a);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

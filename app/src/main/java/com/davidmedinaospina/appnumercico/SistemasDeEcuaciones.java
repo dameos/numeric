@@ -105,6 +105,11 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             Intent a = new Intent(this, MainActivity.class);
             startActivity(a);
         }
+
+        if(id == R.id.integration) {
+            Intent a = new Intent(this,Integracion.class);
+            startActivity(a);
+        }
         return super.onOptionsItemSelected(item);
     }
 

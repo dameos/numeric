@@ -7,4 +7,6 @@
         android:id="@+id/interpolation" />
     <item android:title="Sistemas de Ecuaciones"
         android:id="@+id/sistemasEcuaciones" />
+    <item android:title="Integracion"
+        android:id="@+id/integration" />
 </menu>
