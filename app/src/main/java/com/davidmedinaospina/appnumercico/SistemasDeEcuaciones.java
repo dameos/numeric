@@ -252,7 +252,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
         TableLayout table = (TableLayout) findViewById(R.id.ingreso_datos);
         CheckBox check = (CheckBox) findViewById(R.id.checkP);
-        paso = check.isEnabled();
+        paso = check.isChecked();
         for (int i = 0; i < tamaño; i++) {
             ArrayList<Double> fila = new ArrayList<>();
             TableRow t = (TableRow) table.getChildAt(i);

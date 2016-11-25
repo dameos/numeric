@@ -33,7 +33,7 @@ public class MatrizResult extends AppCompatActivity {
     private double[][] l;
     private double[][] u;
     private double[] ans;
-    private boolean paso;
+    private boolean paso = false;
     private ArrayList<Double> x0 = new ArrayList<>();
     private double tolerance;
     private int iterations;
@@ -84,6 +84,7 @@ public class MatrizResult extends AppCompatActivity {
                     res = EliminacionGauss(aumen, 0);
                     if(!paso)Imprimir(res, false);
                     ans = SustitucionRegresiva(res);
+                    NameMatrix("");
                     String text = "";
                     for (int i = 0; i < marcas.length; i++) {
                         text = text + " " +  "X" +  String.valueOf(marcas[i]);
