@@ -94,7 +94,47 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/guardar"
                 android:visibility="invisible" />
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="Relajacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relajacion"
+                    android:visibility="invisible" />
+            </TableRow>
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/relajaciont"
+                android:layout_above="@+id/ingreso_datos">
 
+
+            </TableLayout>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="Iterativos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iterativos"
+                    android:visibility="invisible" />
+            </TableRow>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_weight="1"
+                android:fillViewport="true">
+                    <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iterativost"
+                    android:layout_above="@+id/ingreso_datos">
+                    </TableLayout>
+             </HorizontalScrollView>
 
         </TableLayout>
 

@@ -21,6 +21,7 @@ import android.widget.TableRow;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
 import android.support.design.widget.Snackbar;
+import android.widget.TextView;
 
 import com.androidplot.ui.TableOrder;
 
@@ -47,6 +48,8 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
         Button mst = (Button) findViewById(R.id.crear);
         Button guardar = (Button) findViewById(R.id.guardar);
+        Button rela = (Button) findViewById(R.id.relajacion);
+        Button iter = (Button) findViewById(R.id.iterativos);
 
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,18 @@ public class SistemasDeEcuaciones extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 createTable();
+            }});
+
+        rela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relajacion();
+            }});
+
+        iter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iteraciones();
             }});
         
 
@@ -103,11 +118,6 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
         if(id == R.id.solEcuaciones) {
             Intent a = new Intent(this, MainActivity.class);
-            startActivity(a);
-        }
-
-        if(id == R.id.integration) {
-            Intent a = new Intent(this,Integracion.class);
             startActivity(a);
         }
         return super.onOptionsItemSelected(item);
@@ -212,7 +222,12 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 table.addView(ttr);
             }
             Button guardar = (Button) findViewById(R.id.guardar);
+            Button rela = (Button) findViewById(R.id.relajacion);
+            Button iter = (Button) findViewById(R.id.iterativos);
             guardar.setVisibility(View.VISIBLE);
+            rela.setVisibility(View.VISIBLE);
+            iter.setVisibility(View.VISIBLE);
+
 
 
         } catch (RuntimeException e) {
@@ -253,5 +268,31 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
 
 
+    }
+
+    protected void relajacion(){
+        TableLayout table = (TableLayout) findViewById(R.id.relajaciont);
+        TableRow ttr = new TableRow(this);
+        TextView txt = new TextView(this);
+        txt.setText("Valor de la relajacion");
+        EditText etxt = new EditText(this);
+        etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        ttr.addView(txt);
+        ttr.addView(etxt);
+        table.addView(ttr);
+    }
+
+
+    protected void iteraciones(){
+        TableLayout table = (TableLayout) findViewById(R.id.iterativost);
+        TableRow ttr = new TableRow(this);
+        ttr.setMinimumHeight(110);
+        for(int i = 0; i < tamaño; i++){
+            EditText etxt = new EditText(this);
+            etxt.setWidth(100);
+            etxt.setHeight(100);
+            ttr.addView(etxt);
+        }
+        table.addView(ttr);
     }
 }
