@@ -555,7 +555,7 @@ public class MatrizResult extends AppCompatActivity {
         TableRow ttr = new TableRow(this);
         TableRow.LayoutParams tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
         ttr.setLayoutParams(tlp);
-        ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        //ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
         for(int i = 0; i < a.length; i++){
             TextView n = new TextView(this);
             n.setBackgroundResource(R.drawable.table_border_title);
