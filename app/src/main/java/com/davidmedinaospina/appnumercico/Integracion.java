@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -44,11 +45,13 @@ public class Integracion extends AppCompatActivity
         setContentView(R.layout.activity_integracion);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final EditText puntoA = (EditText) findViewById(R.id.pointA);
-        final EditText puntoB = (EditText) findViewById(R.id.pointB);
-        final EditText func   = (EditText) findViewById(R.id.funcIntegrate);
-        final EditText n      = (EditText) findViewById(R.id.numberOfPoints);
-        final TextView res    = (TextView) findViewById(R.id.resultadito);
+        final EditText puntoA   = (EditText) findViewById(R.id.pointA);
+        final EditText puntoB   = (EditText) findViewById(R.id.pointB);
+        final EditText func     = (EditText) findViewById(R.id.funcIntegrate);
+        final EditText n        = (EditText) findViewById(R.id.numberOfPoints);
+        final TextView res      = (TextView) findViewById(R.id.resultadito);
+        final ImageView lazy    = (ImageView) findViewById(R.id.lazyT);
+        final ImageView matrix  = (ImageView) findViewById(R.id.matrixXD);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,8 @@ public class Integracion extends AppCompatActivity
                 if (!pB.isEmpty()) b   = Double.parseDouble(pB);
                 if (!nuN.isEmpty()) n1 = Integer.parseInt(nuN);
                 expr = func.getText().toString();
+                if(!expr.isEmpty() && expr.compareTo("Dragones Del Analisis") == 0) lazy.setVisibility(View.VISIBLE);
+                if(!expr.isEmpty() && expr.compareTo("Funcion Sexy") == 0 && a == 6d && b == 9d) matrix.setVisibility(View.VISIBLE);
                 try {
                     switch (caso) {
                         case 0:

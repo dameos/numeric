@@ -123,8 +123,8 @@ public class Bisecc extends AppCompatActivity {
                         xiView.setText(" " + String.valueOf(xi) + " ");
                         xsView.setText(" " + String.valueOf(xs) + " ");
                         xmView.setText(" " + String.valueOf(xm) + " ");
-                        fxView.setText(" " + String.valueOf(df.format(ym)) + " ");
-                        errorView.setText(" " + String.valueOf(df.format(err)) + " ");
+                        fxView.setText(" " + String.valueOf(df.format(ym)).toString() + " ");
+                        errorView.setText(" " + String.valueOf(df.format(err)).toString() + " ");
 
                         tr.addView(iterView);
                         tr.addView(xiView);
