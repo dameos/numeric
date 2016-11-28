@@ -15,6 +15,8 @@ import android.widget.TextView;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import java.text.DecimalFormat;
+
 public class Secant extends AppCompatActivity {
 
     @Override
@@ -46,6 +48,8 @@ public class Secant extends AppCompatActivity {
         Double x1 = Double.parseDouble(x1Edit.getText().toString());
         Double tol = Double.parseDouble(tolEdit.getText().toString());
         int iter = Integer.parseInt(iterEdit.getText().toString());
+
+        DecimalFormat df = new DecimalFormat( "#########0.00E00" );
 
         // Creando el analizador para la función
         try {
@@ -103,7 +107,7 @@ public class Secant extends AppCompatActivity {
 
                 n0View.setText(" -1 ");
                 xn0View.setText(" " + String.valueOf(x0) + " ");
-                fx0View.setText(" " + String.valueOf(fx0) + " ");
+                fx0View.setText(" " + String.valueOf(df.format(fx0)) + " ");
                 error0View.setText("  ");
 
                 tr0.addView(n0View);
@@ -119,7 +123,7 @@ public class Secant extends AppCompatActivity {
 
                 n0View.setText(" 0 ");
                 xn0View.setText(" " + String.valueOf(x1) + " ");
-                fx0View.setText(" " + String.valueOf(fx1) + " ");
+                fx0View.setText(" " + String.valueOf(df.format(fx1)) + " ");
                 error0View.setText("  ");
 
                 tr1.addView(n0View);
@@ -157,8 +161,8 @@ public class Secant extends AppCompatActivity {
 
                     nView.setText(" " + (String.valueOf(cont) + 1) + " ");
                     xnView.setText(" " + String.valueOf(x1) + " ");
-                    fxView.setText(" " + String.format("%.2f", fx1) + " ");
-                    errorView.setText(" " + String.format("%.2f", error) + " ");
+                    fxView.setText(" " + String.valueOf(df.format(fx1)) + " ");
+                    errorView.setText(" " + String.valueOf(df.format(error)) + " ");
 
                     tr.addView(nView);
                     tr.addView(xnView);

@@ -15,6 +15,8 @@ import android.widget.TextView;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import java.text.DecimalFormat;
+
 public class PuntoFijo extends AppCompatActivity {
 
     @Override
@@ -44,6 +46,8 @@ public class PuntoFijo extends AppCompatActivity {
         Double xn = Double.parseDouble(xnEdit.getText().toString());
         Double tol = Double.parseDouble(tolEdit.getText().toString());
         int iter = Integer.parseInt(iterEdit.getText().toString());
+
+        DecimalFormat df = new DecimalFormat( "#########0.00E00" );
 
         // Creando el analizador para la función
         try {
@@ -106,7 +110,7 @@ public class PuntoFijo extends AppCompatActivity {
                     iterView.setText(" " + String.valueOf(cont) + " ");
                     gxView.setText(" " + String.valueOf(xn) + " ");
                     fxView.setText(" " + String.valueOf(fx) + " ");
-                    errorView.setText(" " + String.format("%.2f", error) + " ");
+                    errorView.setText(" " + String.valueOf(df.format(error)) + " ");
 
                     tr.addView(iterView);
                     tr.addView(gxView);
