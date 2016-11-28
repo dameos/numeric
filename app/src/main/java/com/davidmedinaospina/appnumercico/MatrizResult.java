@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import java.text.DecimalFormat;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -55,6 +56,8 @@ public class MatrizResult extends AppCompatActivity {
         marcas = new int[tamaño];
         TextView met = (TextView) findViewById(R.id.metodo);
         met.setTextSize(20);
+
+
 
         switch(metodo) {
             case "elimG":
@@ -562,12 +565,14 @@ public class MatrizResult extends AppCompatActivity {
         for (int i = 0; i < a.length; i++) {
             TableRow ttr = new TableRow(this);
             TableRow.LayoutParams tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+            DecimalFormat df = new DecimalFormat( "#########0.00" );
             ttr.setLayoutParams(tlp);
             ttr.setBackgroundColor(Color.parseColor("#CFD8DC"));
             for (int j = 0; j < a.length; j++) {
                 TextView n = new TextView(this);
                 n.setBackgroundResource(R.drawable.table_border_title);
-                n.setText(String.valueOf(a[i][j]));
+                n.setText(String.valueOf(df.format(a[i][j])));
+                //n.setText(String.valueOf(a[i][j]));
                 n.setHeight(50);
                 n.setWidth(120);
                 ttr.addView(n);
@@ -575,7 +580,8 @@ public class MatrizResult extends AppCompatActivity {
             if(!isCuadrada) {
                 TextView n = new TextView(this);
                 n.setBackgroundResource(R.drawable.edit_border);
-                n.setText(String.valueOf(a[i][tamaño]));
+                n.setText(String.valueOf(df.format(a[i][tamaño])));
+                //n.setText(String.valueOf(a[i][tamaño]));
                 n.setHeight(50);
                 n.setWidth(120);
                 ttr.addView(n);
@@ -588,10 +594,12 @@ public class MatrizResult extends AppCompatActivity {
         TableLayout table = (TableLayout) findViewById(R.id.result_table);
         TableRow ttr = new TableRow(this);
         TableRow.LayoutParams tlp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+        DecimalFormat df = new DecimalFormat( "#########0.00" );
         ttr.setLayoutParams(tlp);
         for(int i = 0; i < a.length; i++){
             TextView n = new TextView(this);
-            n.setText(String.valueOf(a[i]));
+            n.setText(String.valueOf(df.format(a[i])));
+            //n.setText(String.valueOf(a[i]));
             n.setHeight(50);
             n.setWidth(120);
             n.setBackgroundColor(Color.parseColor("#CFD8DC"));

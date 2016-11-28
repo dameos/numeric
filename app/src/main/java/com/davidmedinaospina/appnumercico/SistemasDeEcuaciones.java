@@ -207,14 +207,15 @@ public class SistemasDeEcuaciones extends AppCompatActivity
     }
     protected void createTable() {
 
-        final EditText nmatriz = (EditText)findViewById(R.id.nmatriz);
 
+
+        final EditText nmatriz = (EditText)findViewById(R.id.nmatriz);
 
         tamaño = Integer.parseInt(nmatriz.getText().toString());
 
         try {
             TableLayout table = (TableLayout) findViewById(R.id.ingreso_datos);
-            final LayoutParams lparams = new LayoutParams(20, LayoutParams.MATCH_PARENT);
+            table.removeAllViews();
             TableRow.LayoutParams tlp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT);
 
 
@@ -225,7 +226,8 @@ public class SistemasDeEcuaciones extends AppCompatActivity
                 ttr.setMinimumHeight(110);
                 for (int j = 0; j <= tamaño; j++) {
                     EditText etxt = new EditText(this);
-                    etxt.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                    etxt.setKeyListener(new DigitsKeyListener());
+                    etxt.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL);
                     etxt.setHeight(100);
                     etxt.setWidth(100);
                     if(j == tamaño){
@@ -255,7 +257,10 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
 
     protected void saveTable() {
-
+        if(!datos.isEmpty()){
+            datos.clear();
+            resultados.clear();
+        }
         TableLayout table = (TableLayout) findViewById(R.id.ingreso_datos);
         CheckBox check = (CheckBox) findViewById(R.id.checkP);
         paso = check.isChecked();
@@ -289,7 +294,7 @@ public class SistemasDeEcuaciones extends AppCompatActivity
 
             TableRow titer = (TableRow) iter.getChildAt(1);
             EditText eiter = (EditText) titer.getChildAt(1);
-            iterations = Integer.parseInt(tol.getText().toString());
+            iterations = Integer.parseInt(eiter.getText().toString());
 
 
             TableRow tx0 = (TableRow) iter.getChildAt(2);
