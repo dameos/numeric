@@ -112,9 +112,9 @@ public class Newto extends AppCompatActivity {
 
                     iterView.setText(" " + String.valueOf(cont) + " ");
                     xnView.setText(" " + String.valueOf(xn) + " ");
-                    fxView.setText(" " + String.valueOf(fx) + " ");
+                    fxView.setText(" " + String.format("%.2f", fx) + " ");
                     fxpView.setText(" " + String.valueOf(fxp) + " ");
-                    errorView.setText(" " + String.valueOf(error) + " ");
+                    errorView.setText(" " + String.format("%.2f", error) + " ");
 
                     tr.addView(iterView);
                     tr.addView(xnView);

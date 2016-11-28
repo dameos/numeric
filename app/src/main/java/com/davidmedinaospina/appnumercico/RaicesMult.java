@@ -165,10 +165,10 @@ public class RaicesMult extends AppCompatActivity {
 
                     iterView.setText(" " + String.valueOf(cont) + " ");
                     xnView.setText(" " + String.valueOf(xn) + " ");
-                    fxView.setText(" " + String.valueOf(fx) + " ");
-                    fxpView.setText(" " + String.valueOf(fxp) + " ");
-                    fxdpView.setText(" " + String.valueOf(fxpp) + " ");
-                    errorView.setText(" " + String.valueOf(error) + " ");
+                    fxView.setText(" " + String.format("%.2f", fx) + " ");
+                    fxpView.setText(" " + String.format("%.2f", fxp) + " ");
+                    fxdpView.setText(" " + String.format("%.2f", fxpp) + " ");
+                    errorView.setText(" " + String.format("%.2f", error) + " ");
 
                     tr.addView(titerView);
                     tr.addView(txnView);

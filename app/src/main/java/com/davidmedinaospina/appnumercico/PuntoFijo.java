@@ -106,7 +106,7 @@ public class PuntoFijo extends AppCompatActivity {
                     iterView.setText(" " + String.valueOf(cont) + " ");
                     gxView.setText(" " + String.valueOf(xn) + " ");
                     fxView.setText(" " + String.valueOf(fx) + " ");
-                    errorView.setText(" " + String.valueOf(error) + " ");
+                    errorView.setText(" " + String.format("%.2f", error) + " ");
 
                     tr.addView(iterView);
                     tr.addView(gxView);

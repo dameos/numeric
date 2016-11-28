@@ -4,8 +4,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_grafica">Grafica</string>
-    <string name="title_activity_busq_inc">Busqueda Incremental</string>
+    <string name="title_activity_grafica">Gráfica</string>
+    <string name="title_activity_busq_inc">Búsqueda Incremental</string>
     <string name="title_activity_bisecc">Bisección</string>
     <string name="title_activity_regla_fal">Regla Falsa</string>
     <string name="title_activity_punto_fijo">Punto Fijo</string>
@@ -13,8 +13,8 @@
     <string name="title_activity_secant">Secante</string>
     <string name="title_activity_raices_mult">Raices Múltiples</string>
     <string name="title_activity_matriz">Matriz</string>
-    <string name="title_activity_interpolacion">Interpolacion</string>
-    <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
+    <string name="title_activity_interpolacion">Interpolación</string>
+    <string name="title_activity_sistemas_de_ecuaciones">Sistemas De Ecuaciones</string>
 
     <string name="xiviewBis">Xi</string>
     <string name="xitextBis">x inicial</string>
@@ -25,7 +25,7 @@
     <string name="iterviewBis">Iteraciones</string>
     <string name="itertextBis"># iteraciones</string>
 
-    <string name="x0viewBusq">x0</string>
+    <string name="x0viewBusq">X0</string>
     <string name="x0textBusq">x inicial</string>
     <string name="delviewBusq">Delta</string>
     <string name="deltextBusq">valor delta</string>
@@ -41,35 +41,35 @@
     <string name="iterviewReg">Iteraciones</string>
     <string name="itertextReg"># iteraciones</string>
 
-    <string name="xnviewPfijo">x0</string>
+    <string name="xnviewPfijo">Xn</string>
     <string name="xntextPfijo">x inicial</string>
-    <string name="tolviewPfijo">Delta</string>
-    <string name="toltextPfijo">valor delta</string>
+    <string name="tolviewPfijo">Tolerancia</string>
+    <string name="toltextPfijo">valor tolerancia</string>
     <string name="iterviewPfijo">Iteraciones</string>
     <string name="itertextPfijo"># iteraciones</string>
 
     <string name="title_activity_integracion">Integracion</string>
 
-    <string name="xnviewNewton">x0</string>
+    <string name="xnviewNewton">Xn</string>
     <string name="xntextNewton">x inicial</string>
-    <string name="tolviewNewton">Delta</string>
-    <string name="toltextNewton">valor delta</string>
+    <string name="tolviewNewton">Tolerancia</string>
+    <string name="toltextNewton">valor tolerancia</string>
     <string name="iterviewNewton">Iteraciones</string>
     <string name="itertextNewton"># iteraciones</string>
 
-    <string name="x0viewSecante">x0</string>
-    <string name="x0textSecante">x inicial</string>
-    <string name="x1viewSecante">x0</string>
-    <string name="x1textSecante">x inicial</string>
-    <string name="tolviewSecante">Delta</string>
-    <string name="toltextSecante">valor delta</string>
+    <string name="x0viewSecante">X0</string>
+    <string name="x0textSecante">x0</string>
+    <string name="x1viewSecante">X1</string>
+    <string name="x1textSecante">x1</string>
+    <string name="tolviewSecante">Tolerancia</string>
+    <string name="toltextSecante">valor tolerancia</string>
     <string name="iterviewSecante">Iteraciones</string>
     <string name="itertextSecante"># iteraciones</string>
 
-    <string name="xnviewRMultiples">x0</string>
+    <string name="xnviewRMultiples">Xn</string>
     <string name="xntextRMultiples">x inicial</string>
-    <string name="tolviewRMultiples">Delta</string>
-    <string name="toltextRMultiples">valor delta</string>
+    <string name="tolviewRMultiples">Tolerancia</string>
+    <string name="toltextRMultiples">valor tolerancia</string>
     <string name="iterviewRMultiples">Iteraciones</string>
     <string name="itertextRMultiples"># iteraciones</string>
 </resources>

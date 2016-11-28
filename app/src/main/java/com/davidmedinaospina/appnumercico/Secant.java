@@ -157,8 +157,8 @@ public class Secant extends AppCompatActivity {
 
                     nView.setText(" " + (String.valueOf(cont) + 1) + " ");
                     xnView.setText(" " + String.valueOf(x1) + " ");
-                    fxView.setText(" " + String.valueOf(fx1) + " ");
-                    errorView.setText(" " + String.valueOf(error) + " ");
+                    fxView.setText(" " + String.format("%.2f", fx1) + " ");
+                    errorView.setText(" " + String.format("%.2f", error) + " ");
 
                     tr.addView(nView);
                     tr.addView(xnView);

@@ -19,21 +19,21 @@ public class Launcher extends Activity {
         interpolacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent a = new Intent(Launcher.this,Interpolacion.class);
+                Intent a = new Intent(Launcher.this, Interpolacion.class);
                 startActivity(a);
             }
         });
         ecuacionesUnaVar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent a = new Intent(Launcher.this,MainActivity.class);
+                Intent a = new Intent(Launcher.this, MainActivity.class);
                 startActivity(a);
             }
         });
         sitemas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent a = new Intent(Launcher.this,SistemasDeEcuaciones.class);
+                Intent a = new Intent(Launcher.this, SistemasDeEcuaciones.class);
                 startActivity(a);
             }
         });

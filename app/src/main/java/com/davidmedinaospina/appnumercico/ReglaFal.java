@@ -120,8 +120,8 @@ public class ReglaFal extends AppCompatActivity {
                         xiView.setText(" " + String.valueOf(xi) + " ");
                         xsView.setText(" " + String.valueOf(xs) + " ");
                         xmView.setText(" " + String.valueOf(xm) + " ");
-                        fxView.setText(" " + String.valueOf(ym) + " ");
-                        errorView.setText(" " + String.valueOf(err) + " ");
+                        fxView.setText(" " + String.format("%.2f", ym) + " ");
+                        errorView.setText(" " + String.format("%.2f", err) + " ");
 
                         tr.addView(iterView);
                         tr.addView(xiView);

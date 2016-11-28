@@ -11,7 +11,7 @@
     tools:context="com.davidmedinaospina.appnumercico.Launcher">
 
     <TextView
-        android:text="SUPER APLICACION DE NUMERICO"
+        android:text="SÚPER APLICACIÓN DE NUMÉRICO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
@@ -22,7 +22,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Ecuaciones de una Variable"
+        android:text="Ecuaciones una Variable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -34,17 +34,7 @@
         android:layout_marginEnd="65dp" />
 
     <Button
-        android:text="Interpolacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:id="@+id/interpo"
-        android:layout_below="@+id/ecuacione"
-        android:layout_alignLeft="@+id/ecuacione"
-        android:layout_alignStart="@+id/ecuacione" />
-
-    <Button
-        android:text="Solucion de Ecuaciones"
+        android:text="Solución de Ecuaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/solcionSIs"
@@ -54,7 +44,17 @@
         android:layout_alignStart="@+id/interpo" />
 
     <Button
-        android:text="Integracion Numerica"
+        android:text="Interpolación"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/interpo"
+        android:layout_below="@+id/ecuacione"
+        android:layout_alignLeft="@+id/ecuacione"
+        android:layout_alignStart="@+id/ecuacione" />
+
+    <Button
+        android:text="Integración Numérica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/integration"
