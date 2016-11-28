@@ -134,4 +134,24 @@
         android:layout_alignRight="@+id/textXd"
         android:layout_alignEnd="@+id/textXd" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/lazytown"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lazyT"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/matrix"
+        android:id="@+id/matrixXD"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp"
+        android:visibility="invisible" />
+
 </RelativeLayout>
