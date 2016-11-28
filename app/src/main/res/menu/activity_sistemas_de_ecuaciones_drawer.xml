@@ -10,11 +10,11 @@
                 android:id="@+id/elimG"/>
             <item
                 android:icon="@drawable/ic_menu_share"
-                android:title="Eliminacion gausseana con pivoteo parcial"
+                android:title="E.G pivoteo parcial"
                 android:id="@+id/elimGPP"/>
             <item
                 android:icon="@drawable/ic_menu_share"
-                android:title="Eliminacion gausseana con pivoteo total"
+                android:title="E.G pivoteo total"
                 android:id="@+id/elimGPT"/>
             <item
                 android:title="Cholesky"

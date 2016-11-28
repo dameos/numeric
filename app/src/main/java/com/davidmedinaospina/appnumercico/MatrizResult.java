@@ -38,6 +38,7 @@ public class MatrizResult extends AppCompatActivity {
     private double tolerance;
     private int iterations;
     private double relas;
+    private String metodo1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,36 @@ public class MatrizResult extends AppCompatActivity {
         marcas = new int[tamaño];
         TextView met = (TextView) findViewById(R.id.metodo);
         met.setTextSize(20);
-        met.setText(metodo);
+
+        switch(metodo) {
+            case "elimG":
+                metodo1 = "Eliminacion gaussiana";
+                break;
+            case "elimGPP":
+                metodo1 = "E.G Pivoteo parcial";
+                break;
+            case "elimGPT":
+                metodo1 = "E.G Pivoteo total";
+                break;
+            case "gaussSeidel":
+                metodo1 = "Gauss Seidel";
+                break;
+            case "jacobi":
+                metodo1 = "Jacobi";
+                break;
+            case "cholesky":
+                metodo1 = "Cholesky";
+                break;
+            case "crout":
+                metodo1 = "Crout";
+                break;
+            case "dolitle":
+                metodo1 = "Dolittle";
+                break;
+
+
+        }
+        met.setText(metodo1);
 
         for(int i = 0; i < marcas.length; i++){
             marcas[i] = i;
