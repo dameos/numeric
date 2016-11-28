@@ -15,6 +15,8 @@ import android.widget.TextView;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import java.text.DecimalFormat;
+
 public class RaicesMult extends AppCompatActivity {
 
     @Override
@@ -44,6 +46,8 @@ public class RaicesMult extends AppCompatActivity {
         Double xn = Double.parseDouble(xnEdit.getText().toString());
         Double tol = Double.parseDouble(tolEdit.getText().toString());
         int iter = Integer.parseInt(iterEdit.getText().toString());
+
+        DecimalFormat df = new DecimalFormat( "#########0.00E00" );
 
         // Creando el analizador para la función
         try {
@@ -122,9 +126,9 @@ public class RaicesMult extends AppCompatActivity {
 
                 iter0View.setText(" 0 ");
                 xn0View.setText(" " + xn + " ");
-                fx0View.setText(" " + fx + " ");
-                fxp0View.setText(" " + fxp + " ");
-                fxdp0View.setText(" " + fxpp + " ");
+                fx0View.setText(" " + String.valueOf(df.format(fx ))+ " ");
+                fxp0View.setText(" " + String.valueOf(df.format(fxp ))+ " ");
+                fxdp0View.setText(" " + String.valueOf(df.format(fxpp ))+ " ");
                 error0View.setText("  ");
 
                 tr0.addView(iter0View);
@@ -165,10 +169,10 @@ public class RaicesMult extends AppCompatActivity {
 
                     iterView.setText(" " + String.valueOf(cont) + " ");
                     xnView.setText(" " + String.valueOf(xn) + " ");
-                    fxView.setText(" " + String.format("%.2f", fx) + " ");
-                    fxpView.setText(" " + String.format("%.2f", fxp) + " ");
-                    fxdpView.setText(" " + String.format("%.2f", fxpp) + " ");
-                    errorView.setText(" " + String.format("%.2f", error) + " ");
+                    fxView.setText(" " + String.valueOf(df.format(fx)) + " ");
+                    fxpView.setText(" " + String.valueOf(df.format(fxp)) + " ");
+                    fxdpView.setText(" " + String.valueOf(df.format(fxpp)) + " ");
+                    errorView.setText(" " + String.valueOf(df.format(error)) + " ");
 
                     tr.addView(titerView);
                     tr.addView(txnView);

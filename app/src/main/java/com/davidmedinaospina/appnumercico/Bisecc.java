@@ -14,6 +14,8 @@ import android.widget.TextView;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import java.text.DecimalFormat;
+
 public class Bisecc extends AppCompatActivity {
 
     @Override
@@ -44,6 +46,8 @@ public class Bisecc extends AppCompatActivity {
         Double xs = Double.parseDouble(xsEdit.getText().toString());
         Double tol = Double.parseDouble(tolEdit.getText().toString());
         int iter = Integer.parseInt(iterEdit.getText().toString());
+
+        DecimalFormat df = new DecimalFormat( "#########0.00E00" );
 
         // Creando el analizador para la función
         try {
@@ -119,8 +123,8 @@ public class Bisecc extends AppCompatActivity {
                         xiView.setText(" " + String.valueOf(xi) + " ");
                         xsView.setText(" " + String.valueOf(xs) + " ");
                         xmView.setText(" " + String.valueOf(xm) + " ");
-                        fxView.setText(" " + String.format("%.2f", ym) + " ");
-                        errorView.setText(" " + String.format("%.2f", err) + " ");
+                        fxView.setText(" " + String.valueOf(df.format(ym)) + " ");
+                        errorView.setText(" " + String.valueOf(df.format(err)) + " ");
 
                         tr.addView(iterView);
                         tr.addView(xiView);
